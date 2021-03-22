@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   # get 'home/index'
   # get 'misc/index'
-  root 'users#new'
+  root 'posts#index'
   get '/posts/:id', to: 'posts#show', as: 'show_post'
   get '/posts', to: 'posts#index', as: 'list_posts'
   get '/posts/new', to: 'posts#new', as: 'new_post'
