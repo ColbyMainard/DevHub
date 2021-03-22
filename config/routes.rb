@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get 'home/index'
-  get 'misc/index'
+  
+  # get 'home/index'
+  # get 'misc/index'
+  root 'users#new'
   get '/posts/:id', to: 'posts#show', as: 'show_post'
   get '/posts', to: 'posts#index', as: 'list_posts'
   get '/posts/new', to: 'posts#new', as: 'new_post'
