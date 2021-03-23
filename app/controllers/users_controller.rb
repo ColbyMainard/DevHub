@@ -1,6 +1,7 @@
 class UsersController < ActionController::Base
     #Users controller methods will go here
     before_action :set_user, only: [:show, :edit, :update, :destroy]
+    layout false
 
     def index
         #gets list of all users
