@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+    belongs_to: user
     def index
         #redirect to list of all user accounts.
     end
@@ -32,7 +33,8 @@ class Post < ApplicationRecord
     end
     private
         def set_post
-            @post = Post.find(params[:id])
+            #Determine which post is being operated on
+            #@post = Post.find(params[:id])
         end
         
         def post_params
