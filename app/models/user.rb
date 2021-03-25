@@ -1,5 +1,6 @@
 class User < ApplicationRecord
     before_action :set_user, only: [:show, :edit, :update, :destroy]
+    has_many :posts, :dependent => :destroy
     def index
         #redirect to list of all user accounts.
     end
@@ -42,11 +43,12 @@ class User < ApplicationRecord
     end
     
     def admin
-        #gives existing user admin priviledges
+        #gives existing user admin/moderator priviledges
     end
     private
         def set_user
-            @user = User.find(params[:id])
+            #if a user is logged in, find out which user
+            #@user = User.find(params[:id])
         end
         
         def user_params
