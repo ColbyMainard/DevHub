@@ -54,9 +54,11 @@ class UsersController < ActionController::Base
     private
         def set_user
             #sets which user is currently logged in
-            @user = User.find(params[:id])
+            #@user = User.find(params[:id])
+            @user = User.find(params[:username])
         end
         def user_params
             #Verify user parameters, because internet people be spooky
+            params.require(:user).permit(:profile_picture_link, :username, :email, :password, :vPassword, :discord_username, :instagram_handle, :github_link)
         end
 end
