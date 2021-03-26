@@ -10,7 +10,8 @@ class User < ApplicationRecord
     end
 
     def new
-        @user = User.new
+        #creates new user
+        #@user = User.new
     end
 
     def edit

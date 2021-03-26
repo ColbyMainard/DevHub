@@ -9,7 +9,8 @@ class Post < ApplicationRecord
     end
 
     def new
-        @user = User.new
+        #creates new post
+        #@user = User.new
     end
 
     def edit

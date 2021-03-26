@@ -6,7 +6,6 @@ one:
   email: MyString
   password: MyString
   discord_username: MyString
-  snapchat_username: MyString
   instagram_handle: MyString
   github_link: MyString
   is_admin: false
@@ -17,7 +16,6 @@ two:
   email: MyString
   password: MyString
   discord_username: MyString
-  snapchat_username: MyString
   instagram_handle: MyString
   github_link: MyString
   is_admin: false
