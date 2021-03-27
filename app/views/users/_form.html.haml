@@ -1,57 +1,13 @@
-= form_for @user do |f|
-    - if @user.errors.any?
-        #error_explanation
-        %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
-        %ul
-            - @user.errors.full_messages.each do |message|
-            %li= message
-    %div#form
-        .field
-            %div
-                = f.label :profile_picture_link
-            %div
-                = f.text_field :profile_picture_link
-    %div#form
-        .field
-            %div
-                = f.label :username
-            %div
-                = f.text_field :username
-    %div#form
-        .field
-            %div
-                = f.label :email
-            %div
-                = f.text_field :email
-    %div#form
-        .field
-        %div
-            = f.label :password
-        %div
-            = f.password_field :password
-    %div#form
-        .field
-            %div
-                = f.label "Verify Password"
-            %div
-                = f.password_field :vPassword
-    %div#form
-        .field
-            %div
-                = f.label :discord_username
-            %div
-                = f.text_field :discord_username
-    %div#form
-        .field
-            %div
-                = f.label :instagram_handle
-            %div
-                = f.text_field :instagram_handle
-    %div#form
-        .field
-            %div
-                = f.label :github_link
-            %div
-                = f.text_field :github_link
-        .actions
-            = f.submit 'Create Account'
+%form
+    = form.text_field :profile_picture_link, placeholder: "Link to image"
+    = form.text_field :username, placeholder: "Username"
+    = form.text_field :email, placeholder: "Email"
+    = form.password_field :password, placeholder: "Password"
+    = form.password_field :vPassword, placeholder: "Verify Password"
+    = form.text_field :discord_username, placeholder: "Discord"
+    = form.text_field :instagram_handle, placeholder: "IG Handle"
+    = form.text_field :github_link, placeholder: "Link to GitHub user"
+    = form.submit "Create Account"
+    = submit_tag "Back", form: "back"
+    = form_tag root_path, :id => 'back', :method => :get do |form|
+    %input{:type => "submit", :value => "Sign in"}

@@ -3,13 +3,15 @@ Rails.application.routes.draw do
   
   # get 'home/index'
   # get 'misc/index'
+  resource 'users'
+  resource 'posts'
   root 'posts#index'
   get '/posts/:id', to: 'posts#show', as: 'show_post'
   get '/posts', to: 'posts#index', as: 'list_posts'
   get '/posts/new', to: 'posts#new', as: 'new_post'
   get '/posts/edit', to: 'posts#edit', as: 'edit_post'
-  get '/users/:id', to: 'users#show', as: 'show_user'
-  get '/users', to: 'users#index', as: 'list_users'
   get '/users/new', to: 'users#new', as: 'new_user'
+  get '/users/:username', to: 'users#show', as: 'show_user'
+  get '/users', to: 'users#index', as: 'list_users'
   get '/users/edit', to: 'users#edit', as: 'edit_user'
 end
