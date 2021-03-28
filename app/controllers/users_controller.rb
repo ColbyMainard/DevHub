@@ -22,12 +22,12 @@ class UsersController < ActionController::Base
 
     def create
         #creates a new user
-        verifyInput params
+        valid_params = verifyInput params
     end
 
     def verifyInput params
         #checks that all parts of user login information is of proper format
-        if not UsersHelper.valid_username? params[""]
+        if not UsersHelper.valid_link? params["profile_picture_link"]
             flash[:notice] = "Username not valid. Try different combinations of length and remove special characters."
             return false
         end
@@ -58,6 +58,10 @@ class UsersController < ActionController::Base
         end
         if not UsersHelper.valid_social? params["instagram_handle"]
             flash[:notice] = "Discord username not recognized."
+            return false
+        end
+        if not UsersHelper.valid_link? params["github_link"]
+            flash[:notice] = "Username not valid. Try different combinations of length and remove special characters."
             return false
         end
         return true

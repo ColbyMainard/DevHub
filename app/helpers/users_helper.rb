@@ -94,6 +94,6 @@ module UsersHelper
         if ((link.index("https://") == 0) and length > 8)
             return true 
         end
-        return (link.length == 0)
+        return (link.length == 0)  #it is okay to leave a link blank, but not 
     end
 end
