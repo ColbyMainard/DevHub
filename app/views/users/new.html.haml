@@ -1,7 +1,25 @@
 %body
     %div
         %h1 Create Account
-        = form_for @user
+        = form_for User.new do |form|
+            %div{class: "box"}
+                %p Profile Picture
+                = form.text_field :profile_picture_link, placeholder: "Link to Profile Pic"
+                %p Profile Picture
+                = form.text_field :username, placeholder: "Username"
+                %p Profile Picture
+                = form.text_field :email, placeholder: "Email"
+                %p Profile Picture
+                = form.password_field :password, placeholder: "Password"
+                %p Profile Picture
+                = form.password_field :vPassword, placeholder: "Verify Password"
+                %p Profile Picture
+                = form.text_field :discord_username, placeholder: "Discord Username"
+                %p Profile Picture
+                = form.text_field :instagram_handle, placeholder: "Instagram Handle"
+                %p Profile Picture
+                = form.text_field :github_link, placeholder: "GitHub Link"
+                =button_tag 'Create Account', type: 'submit', disabled: false
     %div
         - if flash[:notice] != nil
             %p{class: "popup"}= flash[:notice]
