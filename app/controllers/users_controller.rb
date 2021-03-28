@@ -28,9 +28,31 @@ class UsersController < ActionController::Base
         #checks that all parts of user login information is of proper format
         #Things to check:
         #valid username - username must be a valid combination of alphanumeric characters and underscores. All other characters are to be treated as invalid
+        if not UsersHelper.valid_username? params["username"]
+            flash[:notice] = "Username not valid. Try different combinations of length and remove special characters."
+            return false
+        end
         #password - valid combination of alphanumeric characters, underscores, and non-quote special characters
+        if not UsersHelper.valid_password? params["password"]
+            flash[:notice] = "Password not valid."
+            return false
+        end
         #verification of password - must be equal to password above
+        if not params[:password].eql? params["vPassword"]
+            flash[:notice] = "Password and confirmation of password do not match."
+            return false
+        end
         #email - where to go for password reset
+        if not UsersHelper.valid_email? params["email"]
+            flash[:notice] = "Email address not recognized."
+            return false
+        end
+        #socials
+        if not UsersHelper.valid_social? params["discord_username"]
+            flash[:notice] = "Discord username not recognized."
+            return false
+        end
+        return true
     end
 
     def update
