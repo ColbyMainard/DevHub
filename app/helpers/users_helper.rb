@@ -47,7 +47,9 @@ module UsersHelper
         return true
     end
     def valid_social? social_handle
-        if 
+        if social_handle.length == 0
+            return true
+        end
         for index in 0..social_handle.length
             is_uppercase_letter = uppercase.include? social_handle[index]
             is_lowercase_letter = lowercase.include? social_handle[index]
@@ -84,5 +86,14 @@ module UsersHelper
             return false
         end
         return true
+    end
+    def valid_link? link
+        if ((link.index("http://") == 0) and length > 7)
+            return true 
+        end
+        if ((link.index("https://") == 0) and length > 8)
+            return true 
+        end
+        return (link.length == 0)
     end
 end
