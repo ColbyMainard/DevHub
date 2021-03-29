@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resource 'users'
   resource 'posts'
   root 'posts#index'
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
   get '/posts/:id', to: 'posts#show', as: 'show_post'
   get '/posts', to: 'posts#index', as: 'list_posts'
   get '/posts/new', to: 'posts#new', as: 'new_post'
@@ -14,4 +17,7 @@ Rails.application.routes.draw do
   get '/users/:username', to: 'users#show', as: 'show_user'
   get '/users', to: 'users#index', as: 'list_users'
   get '/users/edit', to: 'users#edit', as: 'edit_user'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
 end
