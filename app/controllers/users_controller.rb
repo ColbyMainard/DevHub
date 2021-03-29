@@ -23,7 +23,7 @@ class UsersController < ActionController::Base
     def create
         #creates a new user
         if verifyInput(user_params)
-            @user = User.new(profile_picture_link: user_params["profile_picture_link"], username: user_params["username"], email: user_params["email"], password: user_params["password"], discord_username: user_params["discord_username"], email: user_params["email"], instagram_handle: user_params["instagram_handle"])
+            @user = User.new(profile_picture_link: user_params["profile_picture_link"], username: user_params["username"], email: user_params["email"], password: user_params["password"], discord_username: user_params["discord_username"], email: user_params["email"], instagram_handle: user_params["instagram_handle"], github_link: user_params["github_link"], is_admin: false)
             respond_to do |format|
                 if @user.save
                     session[:username] = @user.username
