@@ -121,10 +121,10 @@ class UsersController < ActionController::Base
             return false
         end
         for index in 0..name.length
-            is_uppercase_letter = uppercase.include? name[index]
-            is_lowercase_letter = lowercase.include? name[index]
-            is_digit = numeric.include? name[index]
-            is_underscore = underscore.include? name[index]
+            is_uppercase_letter = uppercase.include? name[index].to_s
+            is_lowercase_letter = lowercase.include? name[index].to_s
+            is_digit = numeric.include? name[index].to_s
+            is_underscore = underscore.include? name[index].to_s
             if not (is_digit || is_lowercase_letter || is_uppercase_letter || is_underscore)
                 return false
             end
@@ -141,18 +141,18 @@ class UsersController < ActionController::Base
         valid_special_characters = "~!@#$%^&*()_-+=[{]}|<>?"
         single_quotes = "\'"
         double_quotes = "\""
-        if name.length < 10
+        if password.length < 10
             return false
         end
-        if name.length > 30
+        if password.length > 30
             return false
         end
         for index in 0..password.length
-            is_uppercase_letter = uppercase.include? password[index]
-            is_lowercase_letter = lowercase.include? password[index]
-            is_digit = numeric.include? password[index]
-            is_underscore = underscore.include? password[index]
-            is_special = valid_special_characters.include? password[index]
+            is_uppercase_letter = uppercase.include? password[index].to_s
+            is_lowercase_letter = lowercase.include? password[index].to_s
+            is_digit = numeric.include? password[index].to_s
+            is_underscore = underscore.include? password[index].to_s
+            is_special = valid_special_characters.include? password[index].to_s
             if not (is_digit || is_lowercase_letter || is_uppercase_letter || is_underscore || is_special)
                 return false
             end
@@ -173,12 +173,12 @@ class UsersController < ActionController::Base
             return true
         end
         for index in 0..social_handle.length
-            is_uppercase_letter = uppercase.include? social_handle[index]
-            is_lowercase_letter = lowercase.include? social_handle[index]
-            is_digit = numeric.include? social_handle[index]
-            is_underscore = underscore.include? social_handle[index]
-            is_special = valid_special_characters.include? social_handle[index]
-            is_dash = dash.include? social_handle[index]
+            is_uppercase_letter = uppercase.include? social_handle[index].to_s
+            is_lowercase_letter = lowercase.include? social_handle[index].to_s
+            is_digit = numeric.include? social_handle[index].to_s
+            is_underscore = underscore.include? social_handle[index].to_s
+            is_special = valid_special_characters.include? social_handle[index].to_s
+            is_dash = dash.include? social_handle[index].to_s
             if not (is_digit || is_lowercase_letter || is_uppercase_letter || is_underscore || is_special || is_dash)
                 return false
             end
@@ -198,7 +198,7 @@ class UsersController < ActionController::Base
         valid_email_endings = ["@gmail.com", "@yahoo.com", "@hotmail.com", "@aol.com", "@hotmail.com", "@verizon.net", "@msn.com", "@aim.com"]
         end_is_valid = false
         for index in 0..valid_email_endings.length
-            if email.include? valid_email_endings[index]
+            if email.include? valid_email_endings[index].to_s
                 if not end_is_valid
                     end_is_valid = true
                 end
@@ -210,10 +210,10 @@ class UsersController < ActionController::Base
         if not (email.length > 11)
             return false
         end
-        if email.include? single_quotes
+        if email.include? single_quotes.to_s
             return false
         end
-        if email.include? double_quotes
+        if email.include? double_quotes.to_s
             return false
         end
         return true
@@ -243,7 +243,7 @@ class UsersController < ActionController::Base
             #@user = User.find(params[:id])
             @user = User.find(params[:username])
         end
-        
+
         def user_params
             #Verify user parameters, because internet people be spooky
             params.require(:user).permit(:profile_picture_link, :username, :email, :password, :vPassword, :discord_username, :instagram_handle, :github_link)
