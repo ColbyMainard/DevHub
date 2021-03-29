@@ -1,4 +1,26 @@
 %body
-    %h1 New User
-    %p Form for creating new user goes here
-    %p Make sure to include ways to navigate to other pages from here
+    %div
+        %h1 Create Account
+        = form_for User.new do |form|
+            %div{class: "box"}
+                %p Profile Picture
+                = form.text_field :profile_picture_link, placeholder: "Link to Profile Pic"
+                %p Username
+                = form.text_field :username, placeholder: "Username"
+                %p Email
+                = form.text_field :email, placeholder: "Email"
+                %p Password
+                = form.password_field :password, placeholder: "Password"
+                %p Verify Password
+                = form.password_field :vPassword, placeholder: "Verify Password"
+                %p Discord Username
+                = form.text_field :discord_username, placeholder: "Discord Username"
+                %p Instagram
+                = form.text_field :instagram_handle, placeholder: "Instagram Handle"
+                %p GitHub
+                = form.text_field :github_link, placeholder: "GitHub Link"
+                =button_tag 'Create Account', type: 'submit', disabled: false
+    %div
+        - if flash[:notice] != nil
+            %p{class: "popup"}= flash[:notice]
+            %p Make sure to include ways to navigate to other pages from here
