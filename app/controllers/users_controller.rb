@@ -22,7 +22,25 @@ class UsersController < ActionController::Base
 
     def create
         #creates a new user
-        valid_params = verifyInput params
+        if verifyInput(user_params)
+            @user = User.new(profile_picture_link: user_params["profile_picture_link"], username: user_params["username"], email: user_params["email"], password: user_params["password"], discord_username: user_params["discord_username"], email: user_params["email"], instagram_handle: user_params["instagram_handle"])
+            respond_to do |format|
+                if @user.save
+                    session[:username] = @user.username
+                    format.html { redirect_to root_url, notice: "Logged in!" }
+                else
+                    format.html { render :new }
+                    format.json { render json: @user.errors, status: :unprocessable_entity }
+                    flash[:notice] = "Error creating account."
+                    print("Error Creating User")
+                    format.html { redirect_to action: "new"}
+                end
+            end
+        else
+            respond_to do |format|
+                format.html { redirect_to action: "new"}
+            end
+        end
     end
 
     def verifyInput params
