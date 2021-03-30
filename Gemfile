@@ -36,6 +36,7 @@ gem 'reek'
 gem 'flog' 
 gem 'flay'
 gem 'saikuro'
+gem 'simplecov'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
