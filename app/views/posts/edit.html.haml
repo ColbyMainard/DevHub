@@ -1,4 +1,15 @@
 %body
     %h1 Edit Post
-    %p Form for editing post goes here
-    %p Make sure to include ways to navigate to other pages from here
+    = form_for Post.edit do |form|
+        %div{class: "box"}
+            %p Title
+            = form.text_field :title, placeholder: "Title"
+            %p Project Status
+            = form.text_field :project_status, placeholder: "Project Status"
+            %p Project Motivation
+            = form.text_field :project_motivation, placeholder: "Project Motivation"
+            %p Github Repo
+            = form.text_field :github_repo, placeholder: "Github Repo Link"
+            %p Youtube Video
+            = form.text_field :youtube_video, placeholder: "Youtube Video Link"
+            = button_tag 'Update Post', type: 'submit', disabled: false
