@@ -2,7 +2,7 @@ class PostsController < ActionController::Base
     #Posts controller methods will go here
     before_action :set_review, only: [:show, :edit, :update, :destroy]
     def index
-        #gets all posts
+        @posts = Post.all
     end
     def show
         #gets an individual post
@@ -12,9 +12,6 @@ class PostsController < ActionController::Base
     end
     def edit
         #edits a given post
-    end
-    def post_list
-        #list of all existing posts
     end
     def create
         #creates a new controller
