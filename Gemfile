@@ -24,6 +24,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'haml'
 
+#dependencies of code quality gems
+gem 'rexml'
+
 # Use Active Storage variant
 #gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
@@ -32,11 +35,10 @@ gem 'mini_magick'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 #quality metrics
-gem 'reek'
-gem 'flog' 
-gem 'flay'
-gem 'saikuro'
-gem 'simplecov'
+gem 'reek', '>= 6.0.0'
+gem 'flog', '>= 4.6.2'
+gem 'flay', '>= 2.10.0'
+gem 'simplecov', '>= 0.20.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
