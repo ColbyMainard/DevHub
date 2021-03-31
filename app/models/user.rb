@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :posts, :dependent => :destroy
     attr_accessor :vPassword
     validates :email, presence: true
     validates :username, presence: true, uniqueness: true
