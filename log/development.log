@@ -1402,3 +1402,431 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 1426)
 
 
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:35:47 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 16.9ms | Allocations: 11033)
+Completed 200 OK in 31ms (Views: 20.6ms | ActiveRecord: 0.7ms | Allocations: 15614)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:35:49 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 1.5ms | Allocations: 1695)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 2429)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:35:50 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 3.9ms | Allocations: 1007)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.2ms | Allocations: 1429)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:35:51 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.3ms | Allocations: 49)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 415)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:35:52 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.8ms | Allocations: 1015)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 1446)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:35:55 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 410)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:35:57 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.0ms | Allocations: 1012)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms | Allocations: 1438)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:38:03 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 410)
+
+
+Started GET "/users/new" for 47.211.216.165 at 2021-04-01 21:38:08 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml
+  Rendered users/new.html.haml (Duration: 27.1ms | Allocations: 13625)
+Completed 200 OK in 30ms (Views: 28.6ms | ActiveRecord: 0.8ms | Allocations: 14113)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:38:13 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:39:31 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 1.7ms | Allocations: 1693)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 2477)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:39:32 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 463)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:39:55 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 1.7ms | Allocations: 1694)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 2484)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:39:56 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 6.3ms | Allocations: 3977)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 5266)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:39:57 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 465)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:40:29 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 462)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:40:31 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.4ms | Allocations: 1006)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.1ms | Allocations: 1479)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:40:31 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 462)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:42:08 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 462)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:42:09 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.8ms | Allocations: 1006)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:42:12 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 462)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:43:09 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 462)
+
+
+Started GET "/users/1" for 47.211.216.165 at 2021-04-01 21:43:15 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"1"}
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 463)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:43:20 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 462)
+
+
+Started GET "/users/1" for 47.211.216.165 at 2021-04-01 21:43:22 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"username"=>"1"}
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 462)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:43:22 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 48)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 462)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:43:23 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.3ms | Allocations: 1012)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 1489)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:43:45 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 15.4ms | Allocations: 6390)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 1.6ms | Allocations: 7682)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:43:46 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 51)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 700)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:43:50 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.1ms | Allocations: 1006)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.1ms | Allocations: 1479)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:45:05 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 18.9ms | Allocations: 6328)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 1.1ms | Allocations: 7615)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:45:07 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.2ms | Allocations: 51)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 700)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:45:08 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 6.6ms | Allocations: 1006)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms | Allocations: 1479)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:45:29 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/posts/index.html.haml:11
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 15.2ms | Allocations: 6334)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 1.3ms | Allocations: 7624)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:45:31 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.9ms | Allocations: 1829)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 3563)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:45:33 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.4ms | Allocations: 1007)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 1481)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:45:34 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 0.3ms | Allocations: 98)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 519)
+
+
+Started GET "/users/new" for 47.211.216.165 at 2021-04-01 21:45:36 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml
+  Rendered users/new.html.haml (Duration: 12.8ms | Allocations: 9579)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.6ms | Allocations: 10115)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:45:38 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 0.3ms | Allocations: 98)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 519)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:45:38 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 5.0ms | Allocations: 1006)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:45:40 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 0.3ms | Allocations: 98)
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 520)
+
+
+Started GET "/users/new" for 47.211.216.165 at 2021-04-01 21:45:42 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml
+  Rendered users/new.html.haml (Duration: 1.6ms | Allocations: 685)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 1094)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:45:45 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 0.4ms | Allocations: 98)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 520)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:45:46 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 5.1ms | Allocations: 1006)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:45:48 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 0.4ms | Allocations: 98)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 519)
+
+
+Started GET "/users/new" for 47.211.216.165 at 2021-04-01 21:45:48 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml
+  Rendered users/new.html.haml (Duration: 1.9ms | Allocations: 685)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 1097)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:45:50 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 0.3ms | Allocations: 98)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 519)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:45:50 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.1ms | Allocations: 1006)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
