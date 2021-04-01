@@ -241,7 +241,7 @@ class UsersController < ActionController::Base
         def set_user
             #sets which user is currently logged in
             #@user = User.find(params[:id])
-            @user = User.find(params[:username])
+            #@user = User.find(params[:username])
         end
 
         def user_params
