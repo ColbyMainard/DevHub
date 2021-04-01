@@ -15,6 +15,17 @@ class PostsController < ActionController::Base
     end
     def create
         #creates a new controller
+        if params['post']['username'].nil?
+            params['post']['username'] = 'FNU'
+        end
+        params.permit!
+        @post = Post.create!(params['post'])
+        flash[:notice] = "#{@post.post_title} was successfully created"
+        redirect_to controller: 'posts', action: 'index'
+
+        #@post = Movie.create!(movie_params)
+        #flash[:notice] = "#{@movie.title} was successfully created."
+        #redirect_to movies_path
     end
     def update
         #updates a post after an edit
