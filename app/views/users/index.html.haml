@@ -1,6 +1,24 @@
 %body
     %h1 All Users
-    %p List of users will go here
-    %p Make sure to include ways to navigate to other pages from here
+
+%table#users.table.table-striped.col-md-12
+    %thead
+        %tr
+            %th Username
+            %th Email
+            %th Created time
+            %th Updated time
+
+    %tbody
+        - @users.each do |user|
+            %tr
+                %td 
+                    = user.username
+                %td
+                    = user.email
+                %td 
+                    =user.created_at
+                %td 
+                    =user.updated_at
     
 = link_to 'Add new user', new_user_path

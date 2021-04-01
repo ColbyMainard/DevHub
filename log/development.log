@@ -1830,3 +1830,1188 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 1478)
 
 
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:46:53 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 17.2ms | Allocations: 11032)
+Completed 200 OK in 31ms (Views: 20.7ms | ActiveRecord: 0.7ms | Allocations: 15713)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:46:54 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.9ms | Allocations: 1823)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3884)
+
+
+Started GET "/users/new" for 47.211.216.165 at 2021-04-01 21:46:56 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml
+  Rendered users/new.html.haml (Duration: 13.5ms | Allocations: 10186)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.6ms | Allocations: 10724)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:46:59 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 0.4ms | Allocations: 99)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 529)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:47:00 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 5.0ms | Allocations: 1016)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 1502)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 21:55:08 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 15.2ms | Allocations: 11032)
+Completed 200 OK in 30ms (Views: 19.9ms | ActiveRecord: 0.7ms | Allocations: 15713)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:55:10 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.9ms | Allocations: 2142)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 4182)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 2 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    2:     %h1 All Users
+    3:     
+    4: %table#users.table.table-striped.col-md-12
+    5:   %thead
+    6:     %tr
+    7:       %th Username
+    8:       %th Email
+  
+app/views/users/index.html.haml:5
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:55:53 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.5ms | Allocations: 1870)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2637)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 2 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    2:     %h1 All Users
+    3:     
+    4: %table#users.table.table-striped.col-md-12
+    5:   %thead
+    6:     %tr
+    7:       %th Username
+    8:       %th Email
+  
+app/views/users/index.html.haml:5
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:56:22 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.5ms | Allocations: 1870)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2638)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 2 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    2:     %h1 All Users
+    3:     
+    4: %table#users.table.table-striped.col-md-12
+    5:   %thead
+    6:         %tr
+    7:           %th Username
+    8:           %th Email
+  
+app/views/users/index.html.haml:5
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:57:11 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.6ms | Allocations: 1869)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2637)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 2 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    2:     %h1 All Users
+    3: 
+    4: %table#users.table.table-striped.col-md-12
+    5:   %thead
+    6:         %tr
+    7:           %th Username
+    8:           %th Email
+  
+app/views/users/index.html.haml:5
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:57:19 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.5ms | Allocations: 1910)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2666)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 10 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    4: %table#users.table.table-striped.col-md-12
+    5:     %thead
+    6:         %tr
+    7:           %th Username
+    8:           %th Email
+    9:           %th Discord Username
+   10:           %th Instagram
+  
+app/views/users/index.html.haml:7
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:57:35 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.9ms | Allocations: 2090)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2846)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 2 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    10:             %th Instagram
+    11:             %th GitHub
+    12:             %th Profile Picture
+    13:   %tbody
+    14:     - @posts.each do |post|
+    15:       %tr
+    16:         %td
+  
+app/views/users/index.html.haml:13
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:57:44 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.6ms | Allocations: 2129)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2885)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 6 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    12:             %th Profile Picture
+    13:     %tbody
+    14:     - @posts.each do |post|
+    15:       %tr
+    16:         %td
+    17:           = link_to "#{post.post_title}", list_posts_path
+    18:         %td
+  
+app/views/users/index.html.haml:15
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:58:07 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.7ms | Allocations: 2155)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2911)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 10 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    13:     %tbody
+    14:     - @posts.each do |post|
+    15:         %tr
+    16:           %td
+    17:             = link_to "#{post.post_title}", list_posts_path
+    18:           %td
+    19:             = post.username
+  
+app/views/users/index.html.haml:16
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:58:31 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.6ms | Allocations: 2176)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2932)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 14 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    14:     - @posts.each do |post|
+    15:         %tr
+    16:             %td
+    17:               = link_to "#{post.post_title}", list_posts_path
+    18:             %td
+    19:               = post.username
+    20:             %td
+  
+app/views/users/index.html.haml:17
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:58:51 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.7ms | Allocations: 2176)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2932)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 18 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    14:         - @posts.each do |post|
+    15:             %tr
+    16:                 %td
+    17:                   = link_to "#{post.post_title}", list_posts_path
+    18:                 %td
+    19:                   = post.username
+    20:                 %td
+  
+app/views/users/index.html.haml:17
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:59:20 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 3.3ms | Allocations: 4057)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 4818)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %body
+    %h1 All Users
+
+%table#users.table.table-striped.col-md-12
+    %thead
+        %tr
+            %th Username
+            %th Email
+            %th Discord Username
+            %th Instagram
+            %th GitHub
+            %th Profile Picture
+    %tbody
+        - @posts.each do |post|
+    %tr
+        %td
+        = link_to "#{post.post_title}", list_posts_path
+        %td
+        = post.username
+        %td
+        = post.updated_at
+    
+= link_to 'Add new user', new_user_path
+):
+1:    %body
+2:        %h1 All Users
+3:    
+4:    %table#users.table.table-striped.col-md-12
+5:        %thead
+6:            %tr
+7:                %th Username
+8:                %th Email
+9:                %th Discord Username
+10:                %th Instagram
+11:                %th GitHub
+12:                %th Profile Picture
+13:        %tbody
+14:            - @posts.each do |post|
+15:        %tr
+16:            %td
+17:            = link_to "#{post.post_title}", list_posts_path
+18:            %td
+19:            = post.username
+20:            %td
+21:            = post.updated_at
+22:        
+23:    = link_to 'Add new user', new_user_path
+  
+app/views/users/index.html.haml:25: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:25: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:25: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:25: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:25: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:25: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users" for 47.211.216.165 at 2021-04-01 21:59:59 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.6ms | Allocations: 2179)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2935)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 10 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    14:         - @posts.each do |post|
+    15:     %tr
+    16:         %td
+    17:           = link_to "#{post.post_title}", list_posts_path
+    18:         %td
+    19:           = post.username
+    20:         %td
+  
+app/views/users/index.html.haml:17
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:00:20 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.9ms | Allocations: 2166)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2922)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 10 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    14:         - @posts.each do |post|
+    15:     %tr
+    16:         %td
+    17:           = post.username
+    18:         %td
+    19:           = post.updated_at
+    20:     
+  
+app/views/users/index.html.haml:17
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:00:42 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.7ms | Allocations: 2166)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2922)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 10 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    14:         - @posts.each do |post|
+    15:     %tr
+    16:         %td
+    17:           "aaa"
+    18:         %td
+    19:           "bbb"
+    20:     
+  
+app/views/users/index.html.haml:17
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:01:06 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 3.0ms | Allocations: 3812)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 4569)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %body
+    %h1 All Users
+
+%table#users.table.table-striped.col-md-12
+    %thead
+        %tr
+            %th Username
+            %th Email
+            %th Discord Username
+            %th Instagram
+            %th GitHub
+            %th Profile Picture
+    %tbody
+        - @posts.each do |post|
+    %tr
+        %td ll
+        %td jj
+    
+= link_to 'Add new user', new_user_path
+):
+1:    %body
+2:        %h1 All Users
+3:    
+4:    %table#users.table.table-striped.col-md-12
+5:        %thead
+6:            %tr
+7:                %th Username
+8:                %th Email
+9:                %th Discord Username
+10:                %th Instagram
+11:                %th GitHub
+12:                %th Profile Picture
+13:        %tbody
+14:            - @posts.each do |post|
+15:        %tr
+16:            %td ll
+17:            %td jj
+18:        
+19:    = link_to 'Add new user', new_user_path
+  
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:01:27 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 3.3ms | Allocations: 3573)
+Completed 500 Internal Server Error in 7ms (Allocations: 4328)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %body
+    %h1 All Users
+
+%table#users.table.table-striped.col-md-12
+    %thead
+        %tr
+            %th Username
+            %th Email
+            %th Discord Username
+            %th Instagram
+            %th GitHub
+            %th Profile Picture
+    %tbody
+        - @posts.each do |post|
+
+    
+= link_to 'Add new user', new_user_path
+):
+1:    %body
+2:        %h1 All Users
+3:    
+4:    %table#users.table.table-striped.col-md-12
+5:        %thead
+6:            %tr
+7:                %th Username
+8:                %th Email
+9:                %th Discord Username
+10:                %th Instagram
+11:                %th GitHub
+12:                %th Profile Picture
+13:        %tbody
+14:            - @posts.each do |post|
+15:    
+16:        
+17:    = link_to 'Add new user', new_user_path
+  
+app/views/users/index.html.haml:19: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:19: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:19: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:19: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:19: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:19: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:02:16 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 3.0ms | Allocations: 3811)
+Completed 500 Internal Server Error in 8ms (Allocations: 4566)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %body
+    %h1 All Users
+
+%table#users.table.table-striped.col-md-12
+    %thead
+        %tr
+            %th Username
+            %th Email
+            %th Discord Username
+            %th Instagram
+            %th GitHub
+            %th Profile Picture
+    %tbody
+        - @posts.each do |post|
+        %tr
+            %td ll
+            %td jj
+    
+= link_to 'Add new user', new_user_path
+):
+1:    %body
+2:        %h1 All Users
+3:    
+4:    %table#users.table.table-striped.col-md-12
+5:        %thead
+6:            %tr
+7:                %th Username
+8:                %th Email
+9:                %th Discord Username
+10:                %th Instagram
+11:                %th GitHub
+12:                %th Profile Picture
+13:        %tbody
+14:            - @posts.each do |post|
+15:            %tr
+16:                %td ll
+17:                %td jj
+18:        
+19:    = link_to 'Add new user', new_user_path
+  
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+app/views/users/index.html.haml:21: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:02:46 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 3.7ms | Allocations: 4327)
+Completed 500 Internal Server Error in 8ms (Allocations: 5083)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    11:             %th GitHub
+    12:             %th Profile Picture
+    13:     %tbody
+    14:         - @posts.each do |post|
+    15:             %tr
+    16:                 %td ll
+    17:                 %td jj
+  
+app/views/users/index.html.haml:14
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:03:00 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/users/index.html.haml:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 17.2ms | Allocations: 9733)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 1.1ms | Allocations: 10523)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:28:47 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/users/index.html.haml:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 15.6ms | Allocations: 4510)
+Completed 200 OK in 26ms (Views: 18.3ms | ActiveRecord: 0.6ms | Allocations: 5300)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:29:08 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 16.5ms | Allocations: 7384)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.1ms | Allocations: 8139)
+
+
+  
+ActionView::Template::Error (undefined method `Username' for #<User id: 1, profile_picture_link: nil, username: "user1", email: "11111@gmail.com", password: [FILTERED], discord_username: nil, instagram_handle: nil, github_link: nil, is_admin: nil, created_at: "2021-04-01 20:52:21.857154000 +0000", updated_at: "2021-03-30 19:49:20.000000000 +0000">
+Did you mean?  username?
+               username=):
+    14:         - @users.each do |user|
+    15:             %tr
+    16:                 %td 
+    17:                 = user.Username
+    18:                 %td jj
+    19:     
+    20: = link_to 'Add new user', new_user_path
+  
+app/views/users/index.html.haml:17
+app/views/users/index.html.haml:14
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:29:16 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 12.3ms | Allocations: 7288)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.1ms | Allocations: 8044)
+
+
+  
+ActionView::Template::Error (undefined method `Username' for #<User id: 1, profile_picture_link: nil, username: "user1", email: "11111@gmail.com", password: [FILTERED], discord_username: nil, instagram_handle: nil, github_link: nil, is_admin: nil, created_at: "2021-04-01 20:52:21.857154000 +0000", updated_at: "2021-03-30 19:49:20.000000000 +0000">
+Did you mean?  username?
+               username=):
+    14:         - @users.each do |user|
+    15:             %tr
+    16:                 %td 
+    17:                     = user.Username
+    18:                 %td jj
+    19:     
+    20: = link_to 'Add new user', new_user_path
+  
+app/views/users/index.html.haml:17
+app/views/users/index.html.haml:14
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:29:27 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.7ms | Allocations: 2157)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2913)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 18 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    14:         - @users.each do |user|
+    15:             %tr
+    16:                 %td 
+    17:                   = user.Username
+    18:                 %td jj
+    19:     
+    20: = link_to 'Add new user', new_user_path
+  
+app/views/users/index.html.haml:17
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:29:38 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 12.4ms | Allocations: 7279)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.1ms | Allocations: 8035)
+
+
+  
+ActionView::Template::Error (undefined method `Username' for #<User id: 1, profile_picture_link: nil, username: "user1", email: "11111@gmail.com", password: [FILTERED], discord_username: nil, instagram_handle: nil, github_link: nil, is_admin: nil, created_at: "2021-04-01 20:52:21.857154000 +0000", updated_at: "2021-03-30 19:49:20.000000000 +0000">
+Did you mean?  username?
+               username=):
+    14:         - @users.each do |user|
+    15:             %tr
+    16:                 %td 
+    17:                 = user.Username
+    18:                 %td jj
+    19:     
+    20: = link_to 'Add new user', new_user_path
+  
+app/views/users/index.html.haml:17
+app/views/users/index.html.haml:14
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:29:51 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 6.5ms | Allocations: 3861)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.1ms | Allocations: 4653)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:30:27 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 3.7ms | Allocations: 799)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 1221)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 22:30:29 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 7.4ms | Allocations: 4000)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 5283)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:30:31 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 4.0ms | Allocations: 799)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 1226)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:30:31 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 3.5ms | Allocations: 799)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 1220)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:30:51 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.8ms | Allocations: 2201)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2955)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 17 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    14:         - @users.each do |user|
+    15:             %tr
+    16:                 %td 
+    17:                  = user.username
+    18:                 %td
+    19:                 = user.email
+    20:                 %td
+  
+app/views/users/index.html.haml:17
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:31:02 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 6.5ms | Allocations: 4299)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.1ms | Allocations: 5091)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:31:16 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 7.1ms | Allocations: 4353)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 5145)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:31:35 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.8ms | Allocations: 2201)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2956)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 19 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    14:         - @users.each do |user|
+    15:             %tr
+    16:                 %td 
+    17:                    = user.username
+    18:                 %td
+    19:                 = user.email
+    20:                 %td
+  
+app/views/users/index.html.haml:17
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:31:51 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 1.7ms | Allocations: 2205)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2961)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 19 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    14:         - @users.each do |user|
+    15:             %tr
+    16:                 %td 
+    17:                    = user.username
+    18:                 %td
+    19:                     = user.email
+    20:                 // %td
+  
+app/views/users/index.html.haml:17
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:32:04 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 15.4ms | Allocations: 4162)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.1ms | Allocations: 4954)
+
+
+Started GET "/" for 47.211.216.165 at 2021-04-01 22:32:52 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 6.6ms | Allocations: 3976)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.1ms | Allocations: 5259)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:32:54 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 5.4ms | Allocations: 1006)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 1479)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:32:56 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.8ms | Allocations: 1006)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:32:57 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.7ms | Allocations: 1006)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:32:58 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.2ms | Allocations: 1006)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:33:00 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.2ms | Allocations: 1006)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:33:00 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.9ms | Allocations: 1006)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:33:02 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.5ms | Allocations: 1006)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 1478)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:33:21 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.3ms | Allocations: 1006)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:33:23 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 5.2ms | Allocations: 814)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.2ms | Allocations: 1237)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:33:25 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.8ms | Allocations: 1006)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:33:27 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.2ms | Allocations: 1006)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 1478)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:33:28 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.6ms | Allocations: 1006)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:33:29 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 4.2ms | Allocations: 1006)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 1478)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:33:57 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 3.7ms | Allocations: 814)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 1235)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:34:18 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 14.4ms | Allocations: 7808)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.1ms | Allocations: 8563)
+
+
+  
+ActionView::Template::Error (undefined method `instagram' for #<User id: 1, profile_picture_link: nil, username: "user1", email: "11111@gmail.com", password: [FILTERED], discord_username: nil, instagram_handle: nil, github_link: nil, is_admin: nil, created_at: "2021-04-01 20:52:21.857154000 +0000", updated_at: "2021-03-30 19:49:20.000000000 +0000">
+Did you mean?  instagram_handle):
+    18:                 %td
+    19:                     = user.email
+    20:                 %td
+    21:                     = user.instagram
+    22:                 %td
+    23:                     = user.email
+    24:                 
+  
+app/views/users/index.html.haml:21
+app/views/users/index.html.haml:14
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:35:14 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 6.6ms | Allocations: 4225)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.1ms | Allocations: 5017)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:35:25 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  Rendered users/index.html.haml (Duration: 3.8ms | Allocations: 4217)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 4973)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check %body
+    %h1 All Users
+
+%table#users.table.table-striped.col-md-12
+    %thead
+        %tr
+            %th Username
+            %th Email
+            %th Discord Username
+            %th Instagram
+            %th GitHub
+            %th Profile Picture
+    %tbody
+        - @users.each do |user|
+            %tr
+                %td 
+                    = user.username
+                %td
+                    = user.email
+                %td
+                    = user.discord_username
+                %td
+                    = user.
+                
+    
+= link_to 'Add new user', new_user_path
+):
+1:    %body
+2:        %h1 All Users
+3:    
+4:    %table#users.table.table-striped.col-md-12
+5:        %thead
+6:            %tr
+7:                %th Username
+8:                %th Email
+9:                %th Discord Username
+10:                %th Instagram
+11:                %th GitHub
+12:                %th Profile Picture
+13:        %tbody
+14:            - @users.each do |user|
+15:                %tr
+16:                    %td 
+17:                        = user.username
+18:                    %td
+19:                        = user.email
+20:                    %td
+21:                        = user.discord_username
+22:                    %td
+23:                        = user.
+24:                    
+25:        
+26:    = link_to 'Add new user', new_user_path
+  
+app/views/users/index.html.haml:24: syntax error, unexpected ')'
+app/views/users/index.html.haml:24: syntax error, unexpected `end', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `ensure', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `end', expecting ')'
+app/views/users/index.html.haml:24: syntax error, unexpected ')'
+app/views/users/index.html.haml:24: syntax error, unexpected `end', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `ensure', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `end', expecting ')'
+app/views/users/index.html.haml:24: syntax error, unexpected ')'
+app/views/users/index.html.haml:24: syntax error, unexpected `end', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `ensure', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `end', expecting ')'
+app/views/users/index.html.haml:24: syntax error, unexpected ')'
+app/views/users/index.html.haml:24: syntax error, unexpected `end', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `ensure', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `end', expecting ')'
+app/views/users/index.html.haml:24: syntax error, unexpected ')'
+app/views/users/index.html.haml:24: syntax error, unexpected `end', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `ensure', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `end', expecting ')'
+app/views/users/index.html.haml:24: syntax error, unexpected ')'
+app/views/users/index.html.haml:24: syntax error, unexpected `end', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `ensure', expecting ')'
+app/views/users/index.html.haml:27: syntax error, unexpected `end', expecting ')'
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:35:57 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 6.8ms | Allocations: 4152)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.1ms | Allocations: 4944)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:36:12 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 6.2ms | Allocations: 4146)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.1ms | Allocations: 4937)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:37:17 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 9.4ms | Allocations: 7469)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms | Allocations: 8225)
+
+
+  
+ActionView::Template::Error (private method `s' called for #<User id: 1, profile_picture_link: nil, username: "user1", email: "11111@gmail.com", password: [FILTERED], discord_username: nil, instagram_handle: nil, github_link: nil, is_admin: nil, created_at: "2021-04-01 20:52:21.857154000 +0000", updated_at: "2021-03-30 19:49:20.000000000 +0000">):
+    20:                 %td
+    21:                     = user.discord_username
+    22:                 %td
+    23:                     = user.s
+    24:                 
+    25:     
+    26: = link_to 'Add new user', new_user_path
+  
+app/views/users/index.html.haml:23
+app/views/users/index.html.haml:14
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:37:44 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 6.8ms | Allocations: 4369)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.1ms | Allocations: 5161)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:37:53 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:14
+  Rendered users/index.html.haml (Duration: 12.4ms | Allocations: 7936)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.1ms | Allocations: 8691)
+
+
+  
+ActionView::Template::Error (undefined method `github' for #<User id: 1, profile_picture_link: nil, username: "user1", email: "11111@gmail.com", password: [FILTERED], discord_username: nil, instagram_handle: nil, github_link: nil, is_admin: nil, created_at: "2021-04-01 20:52:21.857154000 +0000", updated_at: "2021-03-30 19:49:20.000000000 +0000">
+Did you mean?  github_link):
+    22:                 %td
+    23:                     = user.instagram_handle
+    24:                 %td 
+    25:                     =user.github
+    26:                 
+    27:     
+    28: = link_to 'Add new user', new_user_path
+  
+app/views/users/index.html.haml:25
+app/views/users/index.html.haml:14
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:42:39 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:13
+  Rendered users/index.html.haml (Duration: 7.4ms | Allocations: 4572)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 5364)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:43:03 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:13
+  Rendered users/index.html.haml (Duration: 7.0ms | Allocations: 4245)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 5036)
+
+
+Started GET "/posts" for 47.211.216.165 at 2021-04-01 22:43:04 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:11
+  Rendered posts/index.html.haml (Duration: 7.0ms | Allocations: 3974)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms | Allocations: 5256)
+
+
+Started GET "/users" for 47.211.216.165 at 2021-04-01 22:43:06 +0000
+Cannot render console from 47.211.216.165! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#index as HTML
+  Rendering users/index.html.haml
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.haml:13
+  Rendered users/index.html.haml (Duration: 5.0ms | Allocations: 1034)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 1457)
+
+
