@@ -8,6 +8,7 @@
             %th Email
             %th Created time
             %th Updated time
+            %th More Info
 
     %tbody
         - @users.each do |user|
@@ -20,5 +21,7 @@
                     =user.created_at
                 %td 
                     =user.updated_at
+                %td 
+                    =link_to "more info", show_user_path(:username=>user.username)
     
 = link_to 'Add new user', new_user_path
