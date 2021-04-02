@@ -1,4 +1,5 @@
-%h2 All Posts
+%body
+  %h2 All Posts
 %table#posts.table.table-striped.col-md-12
   %thead
     %tr
@@ -17,3 +18,6 @@
         %td
           = post.updated_at
 = link_to 'Add new post', new_post_path, :class => 'btn btn-primary'
+
+.row
+= will_paginate @posts

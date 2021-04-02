@@ -3,6 +3,7 @@ class PostsController < ActionController::Base
     before_action :set_review, only: [:show, :edit, :update, :destroy]
     def index
         @posts = Post.all
+        @posts = @posts.paginate(page: params[:page], per_page: 3)
     end
     def show
         #gets an individual post
