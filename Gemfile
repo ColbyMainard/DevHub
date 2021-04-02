@@ -40,6 +40,12 @@ gem 'flog', '>= 4.6.2'
 gem 'flay', '>= 2.10.0'
 gem 'simplecov', '>= 0.20.0'
 
+#testing gems
+gem 'rspec'
+gem 'rspec-rails'
+gem 'cucumber'
+gem 'database_cleaner'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
