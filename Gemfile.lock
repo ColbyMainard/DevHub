@@ -314,12 +314,16 @@ DEPENDENCIES
   flog (>= 4.6.2)
   haml
   jbuilder (~> 2.7)
+  marcel (= 1.0.1)
   mini_magick
+  nio4r (= 2.5.7)
+  nokogiri (= 1.11.2)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.3)
   redis (~> 4.0)
   reek (>= 6.0.0)
+  regexp_parser (= 2.1.1)
   rexml
   rspec
   rspec-rails

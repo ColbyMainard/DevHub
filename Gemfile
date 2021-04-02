@@ -46,6 +46,13 @@ gem 'rspec-rails'
 gem 'cucumber'
 gem 'database_cleaner'
 
+#handling gems with unspecified versions
+#gem 'mini_mime', '1.03'
+gem 'nokogiri', '1.11.2'
+gem 'regexp_parser', '2.1.1'
+gem 'nio4r', '2.5.7'
+gem 'marcel', '1.0.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
