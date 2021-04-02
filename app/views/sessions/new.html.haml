@@ -5,8 +5,7 @@
             %div{class: "box"}
                 = text_field_tag :username, nil, placeholder: "Username"
                 = password_field_tag :password, nil, placeholder: "Password"
-    = submit_tag "Back", form: "back"
-    = submit_tag "Log In", form: "login"
+        =button_tag 'Create Account', type: 'submit', disabled: false
 
 %div
     -if notice != nil
