@@ -4,12 +4,15 @@ class UsersController < ActionController::Base
     layout false
 
     def index
+        @users = User.all
         #gets list of all users
         #should only be available when logged in as an admin
     end
 
     def show
         #shows information on a particular user
+        @user = User.find_by_username(params[:username])
+        
     end
 
     def new
@@ -240,8 +243,8 @@ class UsersController < ActionController::Base
     private
         def set_user
             #sets which user is currently logged in
-            #@user = User.find(params[:id])
-            @user = User.find(params[:username])
+            # @user = User.find(params[:id])
+            # @user = User.find(params[:username])
         end
 
         def user_params

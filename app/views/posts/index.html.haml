@@ -3,7 +3,8 @@
   %thead
     %tr
       %th Post Title
-      %th User
+      %th 
+        = link_to 'Users', list_users_path
       %th Last Updated
       %th More Info
   %tbody
@@ -15,3 +16,4 @@
           = post.username
         %td
           = post.updated_at
+= link_to 'Add new post', new_post_path, :class => 'btn btn-primary'
