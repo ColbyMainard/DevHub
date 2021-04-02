@@ -1,16 +1,13 @@
 %body{class: "loginBody"}
     %div{class: "bigbox"}
         %h1{} Login
-        = form_tag sessions_path, :id => 'login' do |form|
-        %div{class: "box"}
-            = text_field_tag :username, nil, placeholder: "Username"
-            = password_field_tag :password, nil, placeholder: "Password"
-        = form_tag root_path, :id => 'back', :method => :get do |form|
-        %div
+        = form_tag sessions_new_path, :id => 'login' do |form|
             %div{class: "box"}
+                = text_field_tag :username, nil, placeholder: "Username"
+                = password_field_tag :password, nil, placeholder: "Password"
     = submit_tag "Back", form: "back"
     = submit_tag "Log In", form: "login"
 
 %div
-  -if notice != nil
-    %p{class: "popup"}= notice
+    -if notice != nil
+        %p{class: "popup"}= notice
