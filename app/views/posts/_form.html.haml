@@ -1,3 +1,39 @@
-%h1 Post Form
-%p User form fields go here
-%p Make sure to include ways to navigate to other pages from here
+%form
+    %div#form
+        .field
+            %div
+                = f.label :title
+            %div
+                = f.text_field :title
+    %div#form
+        .field
+            %div
+                = f.label :project_status
+            %div
+                = f.text_field :project_status
+    %div#form
+        .field
+            %div
+                = f.label :project_motivation
+            %div
+                = f.text_field :project_motivation
+    %div#form
+        .field
+            %div
+                = f.label :github_repo
+            %div
+                = f.text_field :github_repo
+    %div#form
+        .field
+            %div
+                = f.label :youtube_video
+            %div
+                = f.text_field :youtube_video
+    %button.btn.btn-primary.primary-button{ type: 'submit' } Submit
+    //= form.text_field :title, placeholder: "Title"
+    //= form.text_field :project_status, placeholder: "Project Status"
+    //= form.text_field :project_motivation, placeholder: "Project Motivation"
+    //= form.text_field :github_repo, placeholder: "Github Repo Link"
+    //= form.text_field :youtube_video, placeholder: "Youtube Video Link"
+    //= form.submit "Update Post"
+    //%input{:type => "submit", :value => "Sign in"}
