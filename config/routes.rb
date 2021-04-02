@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   
   # get 'home/index'
   # get 'misc/index'
-  resource 'users'
-  resource 'posts'
+  
   root 'posts#index'
   get 'sessions/new'
   get 'sessions/create'
@@ -20,4 +19,6 @@ Rails.application.routes.draw do
   #get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create', as: "login_user"
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  resource 'users'
+  resource 'posts'
 end
