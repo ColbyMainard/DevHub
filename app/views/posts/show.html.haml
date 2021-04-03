@@ -4,11 +4,9 @@
     
     %ul#details
     %li
-        Author:
-            \#{@post.username}
+        Author: #{@post.username}
     %li
-        Last updated on:
-        \#{@post.updated_at("%B %d, %Y")}
+        Last updated on: #{@post.updated_at}
         
     %h3 Description:
     %p#description
