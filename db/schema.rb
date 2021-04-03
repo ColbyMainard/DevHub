@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_203952) do
+ActiveRecord::Schema.define(version: 2021_04_02_181452) do
 
   create_table "posts", force: :cascade do |t|
     t.string "username"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2021_03_28_203952) do
     t.string "profile_picture_link"
     t.string "username"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.string "discord_username"
     t.string "instagram_handle"
     t.string "github_link"
