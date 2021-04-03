@@ -1,11 +1,13 @@
 class PostsController < ActionController::Base
     #Posts controller methods will go here
-    before_action :set_review, only: [:show, :edit, :update, :destroy]
+    before_action :set_post, only: [:show, :edit, :update, :destroy]
     def index
         @posts = Post.all
     end
     def show
         #gets an individual post
+        @post = Post.find(params[:id])
+        
     end
     def new
         #create a new post
