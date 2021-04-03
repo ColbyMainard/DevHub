@@ -8,6 +8,7 @@ class PostsController < ActionController::Base
     def show
         #gets an individual post
         @post = Post.find(params[:id])
+        
     end
     def new
         #create a new post
