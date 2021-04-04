@@ -8,13 +8,13 @@ class PostsController < ActionController::Base
     def show
         #gets an individual post
         @post = Post.find(params[:id])
-        
     end
     def new
         #create a new post
     end
     def edit
         #edits a given post
+        @post = Post.find(params[:id])
     end
     def create
         #creates a new controller
@@ -40,7 +40,8 @@ class PostsController < ActionController::Base
         def set_post
             #determine which post is being acted on
         end
-        def post_params params
+        def post_params
             #the internet is scary
+            params.require(:post).permit(:title, :project_status, :project_motivation, :github_repo, :youtube_video)
         end
 end
