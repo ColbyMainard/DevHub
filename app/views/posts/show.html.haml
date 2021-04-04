@@ -1,4 +1,15 @@
 %body
-    %h1 Show Post
-    %p Shows full post here
-    %p Make sure to include ways to navigate to other pages from here
+    %h2
+    %em= @post.post_title
+    
+    %ul#details
+    %li
+        Author: #{@post.username}
+    %li
+        Last updated on: #{@post.updated_at}
+        
+    %h3 Description:
+    %p#description
+        = @post.post_description
+
+= link_to 'Edit posts', edit_post_path
