@@ -12,6 +12,7 @@ class PostsController < ActionController::Base
     end
     def edit
         #edits a given post
+        @post = Post.find(params[:id])
     end
     def post_list
         #list of all existing posts
@@ -29,7 +30,8 @@ class PostsController < ActionController::Base
         def set_post
             #determine which post is being acted on
         end
-        def post_params params
+        def post_params
             #the internet is scary
+            params.require(:post).permit(:title, :project_status, :project_motivation, :github_repo, :youtube_video)
         end
 end
