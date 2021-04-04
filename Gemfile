@@ -24,12 +24,24 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'haml'
 
+#dependencies of code quality gems
+gem 'rexml'
+
 # Use Active Storage variant
 #gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+#quality metrics
+gem 'reek', '>= 6.0.0'
+gem 'flog', '>= 4.6.2'
+gem 'flay', '>= 2.10.0'
+gem 'simplecov', '>= 0.20.0'
+
+# pagination of index page
+gem 'will_paginate', '3.3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

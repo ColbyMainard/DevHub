@@ -1,4 +1,23 @@
 %body
-    %h1 All Posts
-    %p List of posts will go here
-    %p Make sure to include ways to navigate to other pages from here
+  %h2 All Posts
+%table#posts.table.table-striped.col-md-12
+  %thead
+    %tr
+      %th Post Title
+      %th 
+        = link_to 'Users', list_users_path
+      %th Last Updated
+      %th More Info
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td
+          = link_to "#{post.post_title}", show_post_path(post)
+        %td
+          = link_to "#{post.username}", show_user_path(:username => post.username)
+        %td
+          = post.updated_at
+= link_to 'Add new post', new_post_path, :class => 'btn btn-primary'
+
+.row
+= will_paginate @posts

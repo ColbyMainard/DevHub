@@ -1,4 +1,30 @@
 %body
-    %h1 New Post
-    %p Form for creating new post goes here
-    %p Make sure to include ways to navigate to other pages from here
+	%h1 New Post
+	%p Form for creating new post goes here
+	%p Make sure to include ways to navigate to other pages from here
+
+%h2 Create New Post
+= form_tag posts_path, :class => 'form' do
+	= label :post, :post_title, 'Title', :class => 'col-form-label'
+	= text_field :post, :post_title, :class => 'form-control'
+	- 2.times do
+		%br
+	= label :post, :post_description, 'Description', :class => 'col-form-label'
+	= text_field :post, :post_description, :class => 'form-control'
+	- 2.times do
+		%br
+	= label :post, :project_motivation, 'Motivation', :class => 'col-form-label'
+	= text_field :post, :project_motivation, :class => 'form-control'
+	- 2.times do
+		%br
+	= label :post, :github_repo_link, 'GitHub Link', :class => 'col-form-label'
+	= text_field :post, :github_repo_link, :class => 'form-control'
+	- 2.times do
+		%br
+	= label :post, :video_url, 'URL of Video', :class => 'col-form-label'
+	= text_field :post, :video_url, :class => 'form-control'
+	- 2.times do
+		%br
+
+	= submit_tag 'Save Changes', :class => 'btn btn-primary'
+	= link_to 'Cancel', controller: 'posts', action: 'index', :class => 'btn btn-secondary'
