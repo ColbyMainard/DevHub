@@ -1,4 +1,5 @@
-%h2 All Posts
+%body
+  %h2 All Posts
 %table#posts.table.table-striped.col-md-12
   %thead
     %tr
@@ -11,9 +12,12 @@
     - @posts.each do |post|
       %tr
         %td
-          = link_to "#{post.post_title}", list_posts_path
+          = link_to "#{post.post_title}", show_post_path(post)
         %td
-          = post.username
+          = link_to "#{post.username}", show_user_path(:username => post.username)
         %td
           = post.updated_at
 = link_to 'Add new post', new_post_path, :class => 'btn btn-primary'
+
+.row
+= will_paginate @posts

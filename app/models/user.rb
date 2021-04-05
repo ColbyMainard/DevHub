@@ -4,7 +4,8 @@ class User < ApplicationRecord
     attr_accessor :vPassword
     validates :email, presence: true
     validates :username, presence: true, uniqueness: true
-    validates :password, presence: true
+    #validates :password, presence: true
+    has_secure_password
     def is_admin
         #if the user is a moderator, return true
         #return false if not logged in or not moderator
