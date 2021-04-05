@@ -1,5 +1,6 @@
 class PostsController < ActionController::Base
     #Posts controller methods will go here
+    skip_before_action :verify_authenticity_token
     before_action :set_post, only: [:show, :edit, :update, :destroy]
     def index
         @posts = Post.all
@@ -32,6 +33,10 @@ class PostsController < ActionController::Base
     end
     def update
         #updates a post after an edit
+        @post = Post.find(params[:id])
+        @post = Post.update(post_params)
+        #flash[:notice] = "#{@post.title} was successfully updated."
+        redirect_to controller: 'posts', action: 'index'
     end
     def destroy
         #deletes a post
@@ -42,6 +47,6 @@ class PostsController < ActionController::Base
         end
         def post_params
             #the internet is scary
-            params.require(:post).permit(:title, :project_status, :project_motivation, :github_repo, :youtube_video)
+            params.require(:post).permit(:post_title, :post_description, :project_motivation, :github_repo_link, :video_url)
         end
 end

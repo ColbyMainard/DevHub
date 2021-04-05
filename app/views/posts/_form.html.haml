@@ -8,9 +8,9 @@
     %div#form
         .field
             %div
-                = f.label :project_status
+                = f.label :post_description
             %div
-                = f.text_field :project_status
+                = f.text_field :post_description
     %div#form
         .field
             %div
@@ -20,20 +20,20 @@
     %div#form
         .field
             %div
-                = f.label :github_repo
+                = f.label :github_repo_link
             %div
-                = f.text_field :github_repo
+                = f.text_field :github_repo_link
     %div#form
         .field
             %div
-                = f.label :youtube_video
+                = f.label :video_url
             %div
-                = f.text_field :youtube_video
+                = f.text_field :video_url
     %button.btn.btn-primary.primary-button{ type: 'submit' } Submit
     //= form.text_field :title, placeholder: "Title"
-    //= form.text_field :project_status, placeholder: "Project Status"
-    //= form.text_field :project_motivation, placeholder: "Project Motivation"
-    //= form.text_field :github_repo, placeholder: "Github Repo Link"
-    //= form.text_field :youtube_video, placeholder: "Youtube Video Link"
+    //= form.text_field :post_description, placeholder: "Description"
+    //= form.text_field :project_motivation, placeholder: "Motivation"
+    //= form.text_field :github_repo_link, placeholder: "Github Link"
+    //= form.text_field :video_url, placeholder: "URL of Video"
     //= form.submit "Update Post"
     //%input{:type => "submit", :value => "Sign in"}
