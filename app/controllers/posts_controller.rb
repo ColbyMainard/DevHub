@@ -1,6 +1,5 @@
 class PostsController < ActionController::Base
     #Posts controller methods will go here
-    skip_before_action :verify_authenticity_token
     before_action :set_post, only: [:show, :edit, :update, :destroy]
     def index
         @posts = Post.all
@@ -34,8 +33,8 @@ class PostsController < ActionController::Base
     def update
         #updates a post after an edit
         @post = Post.find(params[:id])
-        @post = Post.update(post_params)
-        #flash[:notice] = "#{@post.title} was successfully updated."
+        @post = @post.update(post_params)
+        flash[:notice] = "#{@post=>post_title} was successfully created"
         redirect_to controller: 'posts', action: 'index'
     end
     def destroy
