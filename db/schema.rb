@@ -21,8 +21,6 @@ ActiveRecord::Schema.define(version: 2021_04_02_181452) do
     t.string "video_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "post_id"
-    t.index ["post_id"], name: "index_posts_on_post_id", unique: true
     t.index ["post_title"], name: "index_posts_on_post_title"
     t.index ["username"], name: "index_posts_on_username"
   end
