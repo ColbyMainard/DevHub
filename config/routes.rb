@@ -5,9 +5,6 @@ Rails.application.routes.draw do
   # get 'misc/index'
   
   root 'posts#index'
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
   get '/posts', to: 'posts#index', as: 'list_posts'
   get '/posts/new', to: 'posts#new', as: 'new_post'
   get '/posts/:id', to: 'posts#show', as: 'show_post'
@@ -19,7 +16,13 @@ Rails.application.routes.draw do
   get '/users', to: 'users#index', as: 'list_users'
   get '/users/edit', to: 'users#edit', as: 'edit_user'
   #get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create', as: "login_user"
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
+  resources :sessions, only: [:new, :create, :destroy]
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   resource 'users'
   resource 'posts'

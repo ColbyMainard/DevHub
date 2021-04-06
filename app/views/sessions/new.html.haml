@@ -1,11 +1,11 @@
 %body{class: "loginBody"}
     %div{class: "bigbox"}
         %h1{} Login
-        = form_tag sessions_new_path, :id => 'login' do |form|
+        = form_tag sessions_new_path, :username => 'login' do |form|
             %div{class: "box"}
                 = text_field_tag :username, nil, placeholder: "Username"
                 = password_field_tag :password, nil, placeholder: "Password"
-        =button_tag 'Create Account', type: 'submit', disabled: false
+                %input{:type => "submit", :value => "Sign in"}
 
 %div
     -if notice != nil
