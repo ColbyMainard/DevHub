@@ -2,3 +2,6 @@
     %h1 Show User
     %p Shows all information about user here
     %p Make sure to include ways to navigate to other pages from here
+    %div
+        -if notice != nil
+            %p{class: "popup"}= notice

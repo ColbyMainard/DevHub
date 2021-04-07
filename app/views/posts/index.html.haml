@@ -21,3 +21,6 @@
 
 .row
 = will_paginate @posts
+%div
+  -if notice != nil
+    %p{class: "popup"}= notice

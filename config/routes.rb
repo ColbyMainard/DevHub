@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   
   # get 'home/index'
   # get 'misc/index'
-  
+  resource 'users'
+  resource 'posts'
   root 'posts#index'
   get '/posts', to: 'posts#index', as: 'list_posts'
   get '/posts/new', to: 'posts#new', as: 'new_post'
@@ -15,17 +16,11 @@ Rails.application.routes.draw do
   get '/users/:username', to: 'users#show', as: 'show_user'
   get '/users', to: 'users#index', as: 'list_users'
   get '/users/edit', to: 'users#edit', as: 'edit_user'
-  #get 'login', to: 'sessions#new'
-  get '/sessions/new'
-  get '/sessions/create'
-  get '/sessions/destroy'
-  resources :sessions, only: [:new, :create, :destroy]
-  get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new'
-  #route to create like post/edit
-  patch 'login', to: 'sessions#create', as 'login_user'
-  put 'login', to: 'sessions#create', as 'logged_in_user'
+  resources :sessions, only: [:new, :create, :destroy]
+  
+  get 'login', to: 'sessions#new' #https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8
+  post 'login', to: 'sessions#create' #https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8
+  get 'signup', to: 'users#new', as: 'signup'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  resource 'users'
-  resource 'posts'
 end

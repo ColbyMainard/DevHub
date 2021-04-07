@@ -1,3 +1,6 @@
 %body
     %h1 Moderator Portal
     %p This is where the cool hidden admin functions will be.  If you are not a moderator, you shouldn't be seeing this page.
+%div
+    -if notice != nil
+        %p{class: "popup"}= notice

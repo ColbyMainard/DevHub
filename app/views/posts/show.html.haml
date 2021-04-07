@@ -13,3 +13,6 @@
         = @post.post_description
 
 = link_to 'Edit posts', edit_post_path(:id => @post.id), :method => "get"
+%div
+    -if notice != nil
+        %p{class: "popup"}= notice
