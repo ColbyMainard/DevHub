@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   resources :sessions, only: [:new, :create, :destroy]
   
-  get 'login', to: 'sessions#new' #https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8
+  get 'login', to: 'sessions#new', as: 'log_in' #https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8
   post 'login', to: 'sessions#create' #https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8
   get 'signup', to: 'users#new', as: 'signup'
   get 'logout', to: 'sessions#destroy', as: 'logout'
