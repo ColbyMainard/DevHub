@@ -27,16 +27,14 @@ class UsersController < ActionController::Base
     def update
         #update user, if they exist
         @user = User.find(params[:id])
-     #   @user.update(title: params[:article][:title], description: params[:article][:description])
-          if @user.update_attributes(user_params)
+        if @user.update_attributes(user_params)
             # Handle a successful update.
-            format.html { redirect_to(@user,
-                    :notice => 'Post was successfully updated.') }
-          else
+            format.html { redirect_to(@user, :notice => 'Post was successfully updated.') }
+        else
             flash[:notices] = ["Your profile could not be updated"]
             format.html { redirect_to action: "edit"}
-          end
-end
+        end
+    end
 
     def create
         #creates a new user
