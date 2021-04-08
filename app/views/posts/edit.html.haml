@@ -1,15 +1,26 @@
-%body
-    %h1 Edit Post
-    = form_for Post.edit do |form|
-        %div{class: "box"}
-            %p Title
-            = form.text_field :title, placeholder: "Title"
-            %p Project Status
-            = form.text_field :project_status, placeholder: "Project Status"
-            %p Project Motivation
-            = form.text_field :project_motivation, placeholder: "Project Motivation"
-            %p Github Repo
-            = form.text_field :github_repo, placeholder: "Github Repo Link"
-            %p Youtube Video
-            = form.text_field :youtube_video, placeholder: "Youtube Video Link"
-            = button_tag 'Update Post', type: 'submit', disabled: false
+%h1 Edit Post
+
+= form_for @post, url: posts_path(:id => @post.id), html: { method: :put}, id: @post.id do |form|
+
+  = label :post, :post_title, 'Title', :class => 'col-form-label'
+  = text_field :post, :post_title, :class => 'form-control'
+  %br
+
+  = label :post, :post_description, 'Description', :class => 'col-form-label'
+  = text_field :post, :post_description, :class => 'form-control'
+  %br
+
+  = label :post, :project_motivation, 'Motivation', :class => 'col-form-label'
+  = text_field :post, :project_motivation, :class => 'form-control'
+  %br
+
+  = label :post, :github_repo_link, 'GitHub Link', :class => 'col-form-label'
+  = text_field :post, :github_repo_link, :class => 'form-control'
+  %br
+
+  = label :post, :video_url, 'URL of Video', :class => 'col-form-label'
+  = text_field :post, :video_url, :class => 'form-control'
+  %br
+
+  = button_tag 'Update Post', type: 'submit', disabled: false
+  = link_to 'Cancel', controller: 'posts', action: 'index', :class => 'btn btn-secondary'

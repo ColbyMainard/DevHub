@@ -32,6 +32,10 @@ class PostsController < ActionController::Base
     end
     def update
         #updates a post after an edit
+        @post = Post.find(params[:id])
+        @post = @post.update(post_params)
+        flash[:notice] = "#{@post=>post_title} was successfully created"
+        redirect_to controller: 'posts', action: 'index'
     end
     def destroy
         #deletes a post
@@ -42,6 +46,6 @@ class PostsController < ActionController::Base
         end
         def post_params
             #the internet is scary
-            params.require(:post).permit(:title, :project_status, :project_motivation, :github_repo, :youtube_video)
+            params.require(:post).permit(:post_title, :post_description, :project_motivation, :github_repo_link, :video_url)
         end
 end
