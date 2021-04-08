@@ -1,0 +1,14 @@
+%form
+    %div#form
+        .field
+            %div
+                = f.label :username
+            %div
+                = f.text_field :username
+    %div#form
+        .field
+            %div
+                = f.label :password
+            %div
+                = f.text_field :password
+    %button.btn.btn-primary.primary-button{ type: 'submit' } Submit

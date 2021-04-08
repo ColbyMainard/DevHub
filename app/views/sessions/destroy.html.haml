@@ -1,3 +1,6 @@
 %body
     %h1 Sessions#destroy
     %p Find me in app/views/sessions/destroy.html.haml
+%div
+    -if notice != nil
+        %p{class: "popup"}= notice
