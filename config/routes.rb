@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   patch '/posts/:id', to: 'posts#update', as: 'update_post'
   put '/posts/:id/edit', to: 'posts#update', as: 'updated_post'
   get '/users/new', to: 'users#new', as: 'new_user'
-  get '/users/:username', to: 'users#show', as: 'show_user'
+  get '/users/:id', to: 'users#show', as: 'show_user'
   get '/users', to: 'users#index', as: 'list_users'
   get '/users/edit', to: 'users#edit', as: 'edit_user'
   get 'login', to: 'sessions#new'
