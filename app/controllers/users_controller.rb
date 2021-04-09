@@ -42,6 +42,7 @@ class UsersController < ActionController::Base
             respond_to do |format|
                 if @user.save
                     session[:username] = @user.username
+                    session[:user_id] = user.id
                     format.html { redirect_to root_url, notice: "Logged in!" }
                 else
                     format.html { render :new }

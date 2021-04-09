@@ -1,26 +1,29 @@
 %body
-  %h2 All Posts
+    %h2 All Posts
 %table#posts.table.table-striped.col-md-12
-  %thead
-    %tr
-      %th Post Title
-      %th 
-        = link_to 'Users', list_users_path
-      %th Last Updated
-      %th More Info
-  %tbody
-    - @posts.each do |post|
-      %tr
-        %td
-          = link_to "#{post.post_title}", show_post_path(post)
-        %td
-          = link_to "#{post.username}", show_user_path(:username => post.username)
-        %td
-          = post.updated_at
+    %thead
+        %tr
+            %th Post Title
+            %th 
+                = link_to 'Users', list_users_path
+            %th Last Updated
+            %th More Info
+    %tbody
+        - @posts.each do |post|
+            %tr
+                %td
+                    = link_to "#{post.post_title}", show_post_path(post)
+                %td
+                    = link_to "#{post.username}", show_user_path(:id => post.user_id)
+                %td
+                    = post.updated_at
+                    
+= link_to 'Sign up', signup_path, :class => 'btn btn-primary'  
+= link_to 'Login', log_in_path, :class => 'btn btn-primary'                    
 = link_to 'Add new post', new_post_path, :class => 'btn btn-primary'
 
 .row
 = will_paginate @posts
 %div
-  -if notice != nil
-    %p{class: "popup"}= notice
+    -if notice != nil
+        %p{class: "popup"}= notice
