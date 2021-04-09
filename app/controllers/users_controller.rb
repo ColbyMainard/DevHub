@@ -11,11 +11,7 @@ class UsersController < ActionController::Base
 
     def show
         #shows information on a particular user
-        begin
-            @user = User.find(params[:id])
-        rescue
-            redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
-        end
+        set_user
     end
 
     def new
@@ -254,7 +250,11 @@ class UsersController < ActionController::Base
     private
         def set_user
             #sets which user is currently logged in
-            # @user = User.find(params[:id])
+            begin
+                @user = User.find(params[:id])
+            rescue
+                redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
+            end
             # @user = User.find(params[:username])
         end
 
