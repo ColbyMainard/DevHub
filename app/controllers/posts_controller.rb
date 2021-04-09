@@ -17,18 +17,32 @@ class PostsController < ActionController::Base
         @post = Post.find(params[:id])
     end
     def create
-        #creates a new controller
-        if params['post']['username'].nil?
-            params['post']['username'] = 'FNU'
+        # login or not?
+        if session[:user_id].nil?
+            redirect_to controller: 'sessions', action: 'new'
+            return
         end
+        
+        # #creates a new controller
+        # if params['post']['username'].nil?
+        #     params['post']['username'] = 'FNU'
+        # end
+        
         params.permit!
         @post = Post.create!(params['post'])
+        # add the user_id and username who is logged in
+        @post.user_id = session[:user_id]
+        @post.username = session[:username]
+        # @post.username = User.find(session[:user_id]).username
+        @post.save
+        
         flash[:notice] = "#{@post.post_title} was successfully created"
         redirect_to controller: 'posts', action: 'index'
-
+        
         #@post = Movie.create!(movie_params)
         #flash[:notice] = "#{@movie.title} was successfully created."
         #redirect_to movies_path
+
     end
     def update
         #updates a post after an edit
