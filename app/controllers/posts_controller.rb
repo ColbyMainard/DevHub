@@ -13,7 +13,20 @@ class PostsController < ActionController::Base
         else
             @posts = Post.all
         end
+
+        if params[:order]
+            sorted = params[:order]
+        end
+
+        if sorted
+            if sorted == 'uploaded_time'
+                ordered, @uploaded_time_header = {:uploaded_time => :asc}
+            elsif sorted == 'title'
+                ordered, @title_header = {:post_title => :asc}
+            end
+        end
         
+        @posts = @posts.order(ordered)
         @posts = @posts.paginate(page: params[:page], per_page: 3)
     end
     def show
@@ -72,6 +85,6 @@ class PostsController < ActionController::Base
         end
         def post_params
             #the internet is scary
-            params.require(:post).permit(:post_title, :post_description, :project_motivation, :github_repo_link, :video_url)
+            params.require(:post).permit(:post_title, :post_description, :project_motivation, :github_repo_link, :video_url, :uploaded_time)
         end
 end
