@@ -40,6 +40,18 @@ gem 'flog', '>= 4.6.2'
 gem 'flay', '>= 2.10.0'
 gem 'simplecov', '>= 0.20.0'
 
+#testing gems
+gem 'rspec'
+gem 'rspec-rails'
+gem 'cucumber'
+gem 'database_cleaner'
+
+#handling gems with unspecified versions
+gem 'nokogiri', '1.11.2'
+gem 'regexp_parser', '2.1.1'
+gem 'nio4r', '2.5.7'
+gem 'marcel', '1.0.1'
+
 # pagination of index page
 gem 'will_paginate', '3.3.0'
 
