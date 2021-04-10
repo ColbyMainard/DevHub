@@ -1,22 +1,33 @@
 %body
-  %h2 All Posts
+    %h2 All Posts
+   
+= form_tag(root_path, :method => "get", id: "search-form") do
+    = text_field_tag :username, params[:username], placeholder: "Search Posts by User"
+    = submit_tag "Search"
+    = hidden_field_tag "uploaded_time_sort", true if @uploaded_time_header
+    = hidden_field_tag "popularity_sort", true if @popularity_header
+    = hidden_field_tag "title_sort", true if @title_header
+  
 %table#posts.table.table-striped.col-md-12
-  %thead
-    %tr
-      %th Post Title
-      %th 
-        = link_to 'Users', list_users_path
-      %th Last Updated
-      %th More Info
-  %tbody
-    - @posts.each do |post|
-      %tr
-        %td
-          = link_to "#{post.post_title}", show_post_path(post)
-        %td
-          = link_to "#{post.username}", show_user_path(:username => post.username)
-        %td
-          = post.updated_at
+    %thead
+        %tr
+            %th{:class => @title_header}=link_to 'Post Title', root_path(:order => 'title'), :id => 'title_header'
+            %th 
+                = link_to 'Users', list_users_path
+            %th{:class => @uploaded_time_header}=link_to 'Last Update', root_path(:order => 'uploaded_time'), :id => 'uploaded_time_header'
+            %th More Info
+    %tbody
+        - @posts.each do |post|
+            %tr
+                %td
+                    = link_to "#{post.post_title}", show_post_path(post)
+                %td
+                    = link_to "#{post.username}", show_user_path(:id => post.user_id)
+                %td
+                    = post.updated_at
+                    
+= link_to 'Sign up', signup_path, :class => 'btn btn-primary'  
+= link_to 'Login', log_in_path, :class => 'btn btn-primary'                    
 = link_to 'Add new post', new_post_path, :class => 'btn btn-primary'
 
 .row

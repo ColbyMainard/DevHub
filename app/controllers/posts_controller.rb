@@ -2,7 +2,31 @@ class PostsController < ActionController::Base
     #Posts controller methods will go here
     before_action :set_post, only: [:show, :edit, :update, :destroy]
     def index
-        @posts = Post.all
+        if params[:username]
+            @posts = Post.search(params[:username])
+            if (@posts.nil?)
+                # @posts = Post.all
+                flash[:notice] = "No matching post!"
+                redirect_to controller: 'posts', action: 'index'
+                return
+            end
+        else
+            @posts = Post.all
+        end
+
+        if params[:order]
+            sorted = params[:order]
+        end
+
+        if sorted
+            if sorted == 'uploaded_time'
+                ordered, @uploaded_time_header = {:uploaded_time => :asc}
+            elsif sorted == 'title'
+                ordered, @title_header = {:post_title => :asc}
+            end
+        end
+        
+        @posts = @posts.order(ordered)
         @posts = @posts.paginate(page: params[:page], per_page: 3)
     end
     def show
@@ -46,6 +70,6 @@ class PostsController < ActionController::Base
         end
         def post_params
             #the internet is scary
-            params.require(:post).permit(:post_title, :post_description, :project_motivation, :github_repo_link, :video_url)
+            params.require(:post).permit(:post_title, :post_description, :project_motivation, :github_repo_link, :video_url, :uploaded_time)
         end
 end
