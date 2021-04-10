@@ -66,12 +66,6 @@ class PostsController < ActionController::Base
         #deletes a post
     end
     
-    def search
-        #search the posts by user
-        user = User.find_by_username(params[:username])
-        @posts = Post.where(:user_id => user.id)
-    end
-    
     private
         def set_post
             #determine which post is being acted on
