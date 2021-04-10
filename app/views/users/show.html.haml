@@ -1,4 +1,20 @@
 %body
-    %h1 Show User
-    %p Shows all information about user here
-    %p Make sure to include ways to navigate to other pages from here
+    %div
+        %h1 User Profile 
+        %div{class: "box"}
+            %p 
+                %strong Username: 
+                =@user.username
+            %p 
+                %strong Email:
+                =@user.email
+            %p 
+                %strong Discord Username:
+                =@user.discord_username
+            %p 
+                %strong Instagram Handle:
+                =@user.instagram_handle
+            %p 
+                %strong Github Handle:
+                =@user.github_link
+            =button_to "Edit", edit_user_path(:id=>@user.id), :method => "get"

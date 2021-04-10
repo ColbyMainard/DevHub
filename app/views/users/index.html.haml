@@ -22,6 +22,9 @@
                 %td 
                     =user.updated_at
                 %td 
-                    =link_to "more info", show_user_path(:username=>user.username)
+                    =link_to "more info", show_user_path(:id=>user.id)
     
 = link_to 'Add new user', new_user_path
+%div
+    -if notice != nil
+        %p{class: "popup"}= notice

@@ -11,8 +11,11 @@ class UsersController < ActionController::Base
 
     def show
         #shows information on a particular user
-        @user = User.find_by_username(params[:username])
-        
+        begin
+            @user = User.find(params[:id])
+        rescue
+            redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
+        end
     end
 
     def new
@@ -21,6 +24,19 @@ class UsersController < ActionController::Base
 
     def edit
         #allows for editing a particular user
+        @user = User.find(params[:id])
+    end
+    
+    def update
+        #update user, if they exist
+        @user = User.find(params[:id])
+        if @user.update_attributes(user_params)
+            # Handle a successful update.
+            format.html { redirect_to(@user, :notice => 'Post was successfully updated.') }
+        else
+            flash[:notices] = ["Your profile could not be updated"]
+            format.html { redirect_to action: "edit"}
+        end
     end
 
     def create
@@ -30,6 +46,7 @@ class UsersController < ActionController::Base
             respond_to do |format|
                 if @user.save
                     session[:username] = @user.username
+                    session[:user_id] = @user.id
                     format.html { redirect_to root_url, notice: "Logged in!" }
                 else
                     format.html { render :new }
@@ -86,11 +103,6 @@ class UsersController < ActionController::Base
             return false
         end
         return true
-    end
-
-    def update
-        #update user, if they exist
-        #else, return an error message and redirect them to homepage
     end
 
     def destroy

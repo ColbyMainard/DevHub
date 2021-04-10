@@ -28,3 +28,6 @@
 
 	= submit_tag 'Save Changes', :class => 'btn btn-primary'
 	= link_to 'Cancel', controller: 'posts', action: 'index', :class => 'btn btn-secondary'
+%div
+	-if notice != nil
+		%p{class: "popup"}= notice
