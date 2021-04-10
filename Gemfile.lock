@@ -163,7 +163,7 @@ GEM
     parser (3.0.0.0)
       ast (~> 2.4.1)
     path_expander (1.1.0)
-    pg (0.21.0)
+    pg
     protobuf-cucumber (3.10.8)
       activesupport (>= 3.2)
       middleware
