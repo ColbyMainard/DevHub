@@ -325,7 +325,7 @@ DEPENDENCIES
   mini_magick
   nio4r (= 2.5.7)
   nokogiri (= 1.11.2)
-  pg (~> 0.21)
+  pg
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.3)
