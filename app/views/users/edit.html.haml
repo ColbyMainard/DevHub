@@ -19,4 +19,4 @@
       %p GitHub
       = form.text_field :github_link, placeholder: "GitHub Link"
       %p
-      =button_to "Update Account", update_user_path(:id=>@user.id) 
+      =link_to "Update Account", update_user_path(:id=>@user.id), method: "put", class: 'btn'

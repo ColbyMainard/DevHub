@@ -15,7 +15,7 @@ class UsersController < ActionController::Base
             @user = User.find(params[:id])
         rescue
             redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
-        end
+      end end
     end
 
     def new
@@ -29,14 +29,16 @@ class UsersController < ActionController::Base
     
     def update
         #update user, if they exist
-        @user = User.find(params[:id])
-        if @user.update_attributes(user_params)
-            # Handle a successful update.
-            format.html { redirect_to(@user, :notice => 'Post was successfully updated.') }
-        else
-            flash[:notices] = ["Your profile could not be updated"]
-            format.html { redirect_to action: "edit"}
-        end
+     @user = User.find(params[:id])
+    if @user.assign(user_params)
+    # Handle a successful update.
+    if @user.save
+       redirect_to(show_user_path(:id=>@user.id), :notice => 'Your profile was successfully updated.')
+       else
+       flash[:notices] = ["Your profile could not be updated"]
+       redirect_to action: "edit"
+    end
+end
     end
 
     def create
@@ -66,17 +68,17 @@ class UsersController < ActionController::Base
     def verifyInput params
         #checks that all parts of user login information is of proper format
         if not valid_link? params["profile_picture_link"]
-            flash[:notice] = "Username not valid. Try different combinations of length and remove special characters."
+            flash[:notice] = "Profile picture link not valid. It has to start with (http://)"
             return false
         end
         #valid username - username must be a valid combination of alphanumeric characters and underscores. All other characters are to be treated as invalid
         if not valid_username? params["username"]
-            flash[:notice] = "Username not valid. Try different combinations of length and remove special characters."
+            flash[:notice] = "Username not valid. It has to be atleast 7 characters"
             return false
         end
         #password - valid combination of alphanumeric characters, underscores, and non-quote special characters
         if not valid_password? params["password"]
-            flash[:notice] = "Password not valid."
+            flash[:notice] = "Password not valid. It has to be atleast 10 characters consisting of (letters, numbers and special characters)"
             return false
         end
         #verification of password - must be equal to password above
@@ -99,7 +101,7 @@ class UsersController < ActionController::Base
             return false
         end
         if not valid_link? params["github_link"]
-            flash[:notice] = "Username not valid. Try different combinations of length and remove special characters."
+            flash[:notice] = "Github link is not valid. Try different combinations of length and remove special characters."
             return false
         end
         return true
@@ -263,4 +265,4 @@ class UsersController < ActionController::Base
             #Verify user parameters, because internet people be spooky
             params.require(:user).permit(:profile_picture_link, :username, :email, :password, :vPassword, :discord_username, :instagram_handle, :github_link)
         end
-end
+
