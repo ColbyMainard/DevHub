@@ -2,7 +2,18 @@ class PostsController < ActionController::Base
     #Posts controller methods will go here
     before_action :set_post, only: [:show, :edit, :update, :destroy]
     def index
-        @posts = Post.all
+        if params[:username]
+            @posts = Post.search(params[:username])
+            if (@posts.nil?)
+                # @posts = Post.all
+                flash[:notice] = "No matching post!"
+                redirect_to controller: 'posts', action: 'index'
+                return
+            end
+        else
+            @posts = Post.all
+        end
+        
         @posts = @posts.paginate(page: params[:page], per_page: 3)
     end
     def show
@@ -54,6 +65,13 @@ class PostsController < ActionController::Base
     def destroy
         #deletes a post
     end
+    
+    def search
+        #search the posts by user
+        user = User.find_by_username(params[:username])
+        @posts = Post.where(:user_id => user.id)
+    end
+    
     private
         def set_post
             #determine which post is being acted on

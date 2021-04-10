@@ -1,5 +1,10 @@
 %body
     %h2 All Posts
+   
+= form_tag(root_path, :method => "get", id: "search-form") do
+    = text_field_tag :username, params[:username], placeholder: "Search Posts by User"
+    = submit_tag "Search"
+  
 %table#posts.table.table-striped.col-md-12
     %thead
         %tr
