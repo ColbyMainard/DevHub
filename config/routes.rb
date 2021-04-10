@@ -18,8 +18,6 @@ Rails.application.routes.draw do
   get '/users/edit', to: 'users#edit', as: 'edit_user'
   put '/users/:id/', to: 'users#update', as: 'update_user'
   patch '/users/:id', to: 'users#update', as: 'update_user'
-  #patch '/posts/:id', to: 'posts#update', as: 'update_post'
-  #put '/posts/:id/edit', to: 'posts#update', as: 'updated_post'
   get 'login', to: 'sessions#new'
   resources :sessions, only: [:new, :create, :destroy]
   
