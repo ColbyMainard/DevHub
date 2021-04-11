@@ -2,6 +2,7 @@ class PostsController < ActionController::Base
     #Posts controller methods will go here
     before_action :set_post, only: [:show, :edit, :update, :destroy]
     def index
+        puts @posts
         if params[:username]
             @posts = Post.search(params[:username])
             if (@posts.nil?)

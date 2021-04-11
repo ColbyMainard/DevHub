@@ -5,14 +5,21 @@ class UsersController < ActionController::Base
 
     def index
         @users = User.all
+        puts @users
         #gets list of all users
         #should only be available when logged in as an admin
     end
 
     def show
         #shows information on a particular user
+        
         begin
-            @user = User.find(params[:id])
+            #@user = User.find(params[:id])
+            if params[:id].nil?
+                @user=User.find(1)   
+            else
+                @user=User.find(params[:id])   
+            end
         rescue
             redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
         end
