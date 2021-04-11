@@ -29,13 +29,13 @@ class UsersController < ActionController::Base
     
     def update
         #update user, if they exist
-        @user = User.find(params[:id])
-        if @user.update_attributes(user_params)
+        @user = User.find(session[:user_id])
+        if @user.update(user_params)
             # Handle a successful update.
-            format.html { redirect_to(@user, :notice => 'Post was successfully updated.') }
-        else
-            flash[:notices] = ["Your profile could not be updated"]
-            format.html { redirect_to action: "edit"}
+        redirect_to(show_user_path(:id=>@user.id), :notice => 'Your profile was successfully updated.') 
+     else
+           flash[:notices] = ["Your profile could not be updated"]
+           redirect_to action: "edit"
         end
     end
 

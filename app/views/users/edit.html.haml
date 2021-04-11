@@ -1,6 +1,6 @@
 %body
   %h1 Edit User
-  = form_for @user , url: users_path(@user), html: { method: :put } do |form|
+  = form_for @user , url: users_path(@user), html: { method: :put }, id: @user.id do |form|
     %div{class: "box"}
       %p Profile Picture
       = form.text_field :profile_picture_link, placeholder: "Link to Profile Pic"
@@ -19,4 +19,4 @@
       %p GitHub
       = form.text_field :github_link, placeholder: "GitHub Link"
       %p
-      =button_to "Update Account", update_user_path(:id=>@user.id) 
+      = button_tag 'Update Account', type: 'submit', disabled: false
