@@ -1,0 +1,202 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/ec2-user/environment/DevHub/config/environment.rb": {
+        "lines": [
+          null,
+          1,
+          null,
+          null,
+          1
+        ]
+      },
+      "/home/ec2-user/environment/DevHub/config/application.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/ec2-user/environment/DevHub/config/boot.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1
+        ]
+      },
+      "/home/ec2-user/environment/DevHub/config/environments/test.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/ec2-user/environment/DevHub/spec/controllers/users_controller_spec.rb": {
+        "lines": [
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/ec2-user/environment/DevHub/spec/rails_helper.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null
+        ]
+      },
+      "/home/ec2-user/environment/DevHub/spec/helpers/posts_helper_spec.rb": {
+        "lines": [
+          1,
+          0,
+          0,
+          null
+        ]
+      },
+      "/home/ec2-user/environment/DevHub/spec/helpers/users_helper_spec.rb": {
+        "lines": [
+          1,
+          0,
+          0,
+          null
+        ]
+      },
+      "/home/ec2-user/environment/DevHub/spec/models/posts_model_spec.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/ec2-user/environment/DevHub/spec/models/users_model_spec.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/ec2-user/environment/DevHub/spec/routing/posts_routing_spec.rb": {
+        "lines": [
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/home/ec2-user/environment/DevHub/spec/routing/users_routing_spec.rb": {
+        "lines": [
+          1,
+          0,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1618095666
+  }
+}

@@ -163,6 +163,7 @@ GEM
     parser (3.0.0.0)
       ast (~> 2.4.1)
     path_expander (1.1.0)
+    pg (1.2.3)
     protobuf-cucumber (3.10.8)
       activesupport (>= 3.2)
       middleware
@@ -270,7 +271,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     sys-uname (1.2.2)
       ffi (~> 1.1)
     temple (0.8.2)
@@ -325,6 +325,7 @@ DEPENDENCIES
   mini_magick
   nio4r (= 2.5.7)
   nokogiri (= 1.11.2)
+  pg
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.3)
@@ -337,7 +338,6 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   simplecov (>= 0.20.0)
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
