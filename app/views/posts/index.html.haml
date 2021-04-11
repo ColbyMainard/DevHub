@@ -27,7 +27,7 @@
                 %td
                     = link_to "#{post.post_title}", show_post_path(post)
                 %td
-                    = link_to "#{post.username}", show_user_path(:id => post.user_id)
+                    = link_to "#{post.username}", show_user_path(post)
                 %td
                     = post.updated_at
                     
