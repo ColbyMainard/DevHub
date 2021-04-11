@@ -16,14 +16,14 @@ posts.each do |post|
     Post.create!(post)
 end
 
-# users = [{:username => 'user1', :email => '11111@gmail.com', :password_digest => '1234567', :updated_at => '2021-03-30 19:49:20'},
-#     	  {:username => 'user2', :email => '22222@gmail.com', :password_digest => '1234567', :updated_at => '2021-03-30 19:49:20'},
-#     	  {:username => 'user3', :email => '33333@gmail.com', :password_digest => '1234567', :updated_at => '2021-03-30 19:49:20'},
-#       	  {:username => 'user4', :email => '44444@gmail.com', :password_digest => '1234567', :updated_at => '2021-03-30 19:49:20'},
-#       	  {:username => 'user5', :email => '55555@gmail.com', :password_digest => '1234567', :updated_at => '2021-03-30 19:49:20'},
-#   	 ]
+users = [{:username => 'user1', :email => '11111@gmail.com', :password_digest => '1234567', :updated_at => '2021-03-30 19:49:20'},
+    	  {:username => 'user2', :email => '22222@gmail.com', :password_digest => '1234567', :updated_at => '2021-03-30 19:49:20'},
+    	  {:username => 'user3', :email => '33333@gmail.com', :password_digest => '1234567', :updated_at => '2021-03-30 19:49:20'},
+      	  {:username => 'user4', :email => '44444@gmail.com', :password_digest => '1234567', :updated_at => '2021-03-30 19:49:20'},
+      	  {:username => 'user5', :email => '55555@gmail.com', :password_digest => '1234567', :updated_at => '2021-03-30 19:49:20'},
+  	 ]
 
-# users.each do |user|
-#     User.create!(user)
-# end
+users.each do |user|
+    User.create!(user)
+end
 
