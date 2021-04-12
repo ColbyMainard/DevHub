@@ -14,15 +14,11 @@ class UsersController < ActionController::Base
         #shows information on a particular user
         
         begin
-            #@user = User.find(params[:id])
-            if params[:id].nil?
-                @user=User.find(1)   
-            else
-                @user=User.find(params[:id])   
-            end
+            @user = User.find(session[:user_id])
         rescue
             redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
         end
+        @user=User.find_by_username(params[:id])
     end
 
     def new
@@ -39,7 +35,7 @@ class UsersController < ActionController::Base
         @user = User.find(session[:user_id])
         if @user.update(user_params)
             # Handle a successful update.
-        redirect_to(show_user_path(:id=>@user.id), :notice => 'Your profile was successfully updated.') 
+        redirect_to(show_user_path(@user.username), :notice => 'Your profile was successfully updated.') 
      else
            flash[:notices] = ["Your profile could not be updated"]
            redirect_to action: "edit"
