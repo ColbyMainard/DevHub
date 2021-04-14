@@ -1,0 +1,626 @@
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "post_title" varchar, "post_description" varchar, "project_motivation" varchar, "github_repo_link" varchar, "video_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE INDEX "index_posts_on_post_title" ON "posts" ("post_title")[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE INDEX "index_posts_on_username" ON "posts" ("username")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "profile_picture_link" varchar, "username" varchar, "email" varchar, "password_digest" varchar, "discord_username" varchar, "instagram_handle" varchar, "github_link" varchar, "is_admin" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aposts" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "post_title" varchar DEFAULT NULL, "post_description" varchar DEFAULT NULL, "project_motivation" varchar DEFAULT NULL, "github_repo_link" varchar DEFAULT NULL, "video_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aposts_on_username" ON "aposts" ("username")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aposts_on_user_id" ON "aposts" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aposts_on_post_title" ON "aposts" ("post_title")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aposts" ("id","username","post_title","post_description","project_motivation","github_repo_link","video_url","created_at","updated_at","user_id")
+                     SELECT "id","username","post_title","post_description","project_motivation","github_repo_link","video_url","created_at","updated_at","user_id" FROM "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "post_title" varchar DEFAULT NULL, "post_description" varchar DEFAULT NULL, "project_motivation" varchar DEFAULT NULL, "github_repo_link" varchar DEFAULT NULL, "video_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE INDEX "index_posts_on_post_title" ON "posts" ("post_title")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_posts_on_username" ON "posts" ("username")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("id","username","post_title","post_description","project_motivation","github_repo_link","video_url","created_at","updated_at","user_id")
+                     SELECT "id","username","post_title","post_description","project_motivation","github_repo_link","video_url","created_at","updated_at","user_id" FROM "aposts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aposts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210408201320)[0m
+  [1m[35m (3.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210326161854),
+(20210326162650),
+(20210402181452);
+
+[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-14 21:30:00.583566"], ["updated_at", "2021-04-14 21:30:00.583566"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "86967c3bb68a4e0c5bc4b1b7cf915e75cc25d40a"], ["created_at", "2021-04-14 21:30:00.598479"], ["updated_at", "2021-04-14 21:30:00.598479"]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "post_title" varchar, "post_description" varchar, "project_motivation" varchar, "github_repo_link" varchar, "video_url" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE INDEX "index_posts_on_post_title" ON "posts" ("post_title")[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE INDEX "index_posts_on_username" ON "posts" ("username")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "profile_picture_link" varchar, "username" varchar, "email" varchar, "password_digest" varchar, "discord_username" varchar, "instagram_handle" varchar, "github_link" varchar, "is_admin" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aposts" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "post_title" varchar DEFAULT NULL, "post_description" varchar DEFAULT NULL, "project_motivation" varchar DEFAULT NULL, "github_repo_link" varchar DEFAULT NULL, "video_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_aposts_on_username" ON "aposts" ("username")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aposts_on_user_id" ON "aposts" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_aposts_on_post_title" ON "aposts" ("post_title")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aposts" ("id","username","post_title","post_description","project_motivation","github_repo_link","video_url","created_at","updated_at","user_id")
+                     SELECT "id","username","post_title","post_description","project_motivation","github_repo_link","video_url","created_at","updated_at","user_id" FROM "posts"[0m
+  [1m[35m (3.7ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "post_title" varchar DEFAULT NULL, "post_description" varchar DEFAULT NULL, "project_motivation" varchar DEFAULT NULL, "github_repo_link" varchar DEFAULT NULL, "video_url" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer DEFAULT NULL, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_posts_on_post_title" ON "posts" ("post_title")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_posts_on_username" ON "posts" ("username")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("id","username","post_title","post_description","project_motivation","github_repo_link","video_url","created_at","updated_at","user_id")
+                     SELECT "id","username","post_title","post_description","project_motivation","github_repo_link","video_url","created_at","updated_at","user_id" FROM "aposts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aposts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210408201320)[0m
+  [1m[35m (3.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210326161854),
+(20210326162650),
+(20210402181452);
+
+[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-04-14 21:30:00.732736"], ["updated_at", "2021-04-14 21:30:00.732736"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-04-14 21:30:00.742757"], ["key", "environment"]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "86967c3bb68a4e0c5bc4b1b7cf915e75cc25d40a"], ["created_at", "2021-04-14 21:30:00.758996"], ["updated_at", "2021-04-14 21:30:00.758996"]]
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."username" = ? AND "posts"."post_title" = ? AND "posts"."updated_at" = ? LIMIT ?[0m  [["username", "user1"], ["post_title", "Getting Started with Rails"], ["updated_at", "2021-03-30 19:49:20"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("username", "post_title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "user1"], ["post_title", "Getting Started with Rails"], ["created_at", "2021-04-14 21:30:00.874433"], ["updated_at", "2021-03-30 19:49:20"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."username" = ? AND "posts"."post_title" = ? AND "posts"."updated_at" = ? LIMIT ?[0m  [["username", "user2"], ["post_title", "Creating a New Rails Project"], ["updated_at", "2021-03-30 19:49:20"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("username", "post_title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "user2"], ["post_title", "Creating a New Rails Project"], ["created_at", "2021-04-14 21:30:00.889915"], ["updated_at", "2021-03-30 19:49:20"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."username" = ? AND "posts"."post_title" = ? AND "posts"."updated_at" = ? LIMIT ?[0m  [["username", "user3"], ["post_title", "Hello, Rails!"], ["updated_at", "2021-03-30 19:49:20"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("username", "post_title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "user3"], ["post_title", "Hello, Rails!"], ["created_at", "2021-04-14 21:30:00.903233"], ["updated_at", "2021-03-30 19:49:20"]]
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."username" = ? AND "posts"."post_title" = ? AND "posts"."updated_at" = ? LIMIT ?[0m  [["username", "user1"], ["post_title", "MVC and You"], ["updated_at", "2021-03-30 19:49:20"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("username", "post_title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "user1"], ["post_title", "MVC and You"], ["created_at", "2021-04-14 21:30:00.913807"], ["updated_at", "2021-03-30 19:49:20"]]
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."username" = ? AND "posts"."post_title" = ? AND "posts"."updated_at" = ? LIMIT ?[0m  [["username", "user2"], ["post_title", "CRUDit Where CRUDit Is Due"], ["updated_at", "2021-03-30 19:49:20"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mPost Create (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("username", "post_title", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["username", "user2"], ["post_title", "CRUDit Where CRUDit Is Due"], ["created_at", "2021-04-14 21:30:00.928201"], ["updated_at", "2021-03-30 19:49:20"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? AND "users"."email" = ? AND "users"."password_digest" = ? AND "users"."updated_at" = ? LIMIT ?[0m  [["username", "user1"], ["email", "11111@gmail.com"], ["password_digest", "1234567"], ["updated_at", "2021-03-30 19:49:20"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user1"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user1"], ["email", "11111@gmail.com"], ["password_digest", "1234567"], ["created_at", "2021-04-14 21:30:00.973273"], ["updated_at", "2021-03-30 19:49:20"]]
+  [1m[36mTRANSACTION (8.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? AND "users"."email" = ? AND "users"."password_digest" = ? AND "users"."updated_at" = ? LIMIT ?[0m  [["username", "user2"], ["email", "22222@gmail.com"], ["password_digest", "1234567"], ["updated_at", "2021-03-30 19:49:20"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user2"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user2"], ["email", "22222@gmail.com"], ["password_digest", "1234567"], ["created_at", "2021-04-14 21:30:00.996993"], ["updated_at", "2021-03-30 19:49:20"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? AND "users"."email" = ? AND "users"."password_digest" = ? AND "users"."updated_at" = ? LIMIT ?[0m  [["username", "user3"], ["email", "33333@gmail.com"], ["password_digest", "1234567"], ["updated_at", "2021-03-30 19:49:20"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user3"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user3"], ["email", "33333@gmail.com"], ["password_digest", "1234567"], ["created_at", "2021-04-14 21:30:01.011451"], ["updated_at", "2021-03-30 19:49:20"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? AND "users"."email" = ? AND "users"."password_digest" = ? AND "users"."updated_at" = ? LIMIT ?[0m  [["username", "user4"], ["email", "44444@gmail.com"], ["password_digest", "1234567"], ["updated_at", "2021-03-30 19:49:20"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user4"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user4"], ["email", "44444@gmail.com"], ["password_digest", "1234567"], ["created_at", "2021-04-14 21:30:01.027899"], ["updated_at", "2021-03-30 19:49:20"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? AND "users"."email" = ? AND "users"."password_digest" = ? AND "users"."updated_at" = ? LIMIT ?[0m  [["username", "user5"], ["email", "55555@gmail.com"], ["password_digest", "1234567"], ["updated_at", "2021-03-30 19:49:20"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user5"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "user5"], ["email", "55555@gmail.com"], ["password_digest", "1234567"], ["created_at", "2021-04-14 21:30:01.045577"], ["updated_at", "2021-03-30 19:49:20"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 128.194.2.74 at 2021-04-14 21:30:13 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (3.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 48.8ms | Allocations: 16264)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 7.1ms | Allocations: 22270)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, possible unmatched constraints: [:id]
+Did you mean?  show_user_url):
+    27:                 %td
+    28:                     = link_to "#{post.post_title}", show_post_path(post)
+    29:                 %td
+    30:                     = link_to "#{post.username}", show_user_path(:id => post.user_id)
+    31:                 %td
+    32:                     = post.updated_at
+    33:                     
+  
+app/views/posts/index.html.haml:30
+app/views/posts/index.html.haml:25
+Started GET "/favicon.ico" for 128.194.2.74 at 2021-04-14 21:30:15 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 128.194.2.74 at 2021-04-14 21:31:44 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 22.0ms | Allocations: 15841)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.7ms | Allocations: 20833)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users", :id=>nil}, possible unmatched constraints: [:id]
+Did you mean?  show_user_url):
+    27:                 %td
+    28:                     = link_to "#{post.post_title}", show_post_path(post)
+    29:                 %td
+    30:                     = link_to "#{post.username}", show_user_path(:id => post.user_id)
+    31:                 %td
+    32:                     = post.updated_at
+    33:                     
+  
+app/views/posts/index.html.haml:30
+app/views/posts/index.html.haml:25
+Started GET "/config/getuser?index=0" for 161.35.117.45 at 2021-04-14 21:37:28 +0000
+Cannot render console from 161.35.117.45! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/config/getuser"):
+  
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_dpp2eh7a4i4x9npk3a1m
+Started GET "/" for 128.194.2.74 at 2021-04-14 21:39:27 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/posts/index.html.haml:25
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:39
+  Rendered posts/index.html.haml (Duration: 35.6ms | Allocations: 17667)
+Completed 200 OK in 48ms (Views: 44.4ms | ActiveRecord: 0.7ms | Allocations: 20012)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_w6onzm4l40sap6f5b0e5
+Started GET "/?page=2" for 128.194.2.74 at 2021-04-14 21:39:35 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 6.6ms | Allocations: 1724)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.1ms | Allocations: 2192)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_9ilj8v9xo2zdgv46618f
+Started GET "/?utf8=%E2%9C%93&username=user1&commit=Search" for 128.194.2.74 at 2021-04-14 21:39:40 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"user1", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user1"], ["LIMIT", 1]]
+  ↳ app/models/post.rb:5:in `search'
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ? LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 4.4ms | Allocations: 1231)
+Completed 200 OK in 28ms (Views: 6.2ms | ActiveRecord: 1.3ms | Allocations: 10068)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_vxtyrix2r8kgtklrb53c
+Started GET "/?utf8=%E2%9C%93&username=user2&commit=Search" for 128.194.2.74 at 2021-04-14 21:39:47 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"user2", "commit"=>"Search"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user2"], ["LIMIT", 1]]
+  ↳ app/models/post.rb:5:in `search'
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ? LIMIT ? OFFSET ?[0m  [["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 4.3ms | Allocations: 1182)
+Completed 200 OK in 11ms (Views: 6.4ms | ActiveRecord: 0.2ms | Allocations: 2248)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_pg7j99gwgxqlqnmxkyeq
+Started GET "/?page=1" for 128.194.2.74 at 2021-04-14 21:39:52 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:39
+  Rendered posts/index.html.haml (Duration: 9.3ms | Allocations: 2564)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.3ms | Allocations: 3042)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_z6kxod568vyk8hgmfoqu
+Started GET "/users/user1" for 128.194.2.74 at 2021-04-14 21:39:54 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"user1"}
+Redirected to http://3.141.22.139:8080/
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `show'
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms | Allocations: 1210)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_cgnyyiyt4evxw494wm2i
+Started GET "/" for 128.194.2.74 at 2021-04-14 21:39:54 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:39
+  Rendered posts/index.html.haml (Duration: 8.8ms | Allocations: 2562)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.3ms | Allocations: 4009)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_sr7q4qbsf5phacoss6xl
+Started GET "/signup" for 128.194.2.74 at 2021-04-14 21:39:59 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering users/new.html.haml
+  Rendered users/new.html.haml (Duration: 13.2ms | Allocations: 8314)
+Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 9861)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_9tyjoe7r9sgau0gspsra
+Started POST "/users" for 128.194.2.74 at 2021-04-14 21:40:18 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "user"=>{"profile_picture_link"=>"http://3.22.119.125:8080/signup", "username"=>"user12345", "email"=>"yunfezhang@gmail.com", "password"=>"[FILTERED]", "vPassword"=>"[FILTERED]", "discord_username"=>"cccccc", "instagram_handle"=>"cccccc", "github_link"=>"http://3.22.119.125:8080/signup"}, "button"=>""}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:48:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:48:in `block in create'
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("profile_picture_link", "username", "email", "password_digest", "discord_username", "instagram_handle", "github_link", "is_admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["profile_picture_link", "http://3.22.119.125:8080/signup"], ["username", "user12345"], ["email", "yunfezhang@gmail.com"], ["password_digest", "$2a$12$hl5m/rSFZ5DWUjv8tedDL.BJbS67asJboGhXKCKxfMT2Rv72FZrSS"], ["discord_username", "cccccc"], ["instagram_handle", "cccccc"], ["github_link", "http://3.22.119.125:8080/signup"], ["is_admin", 0], ["created_at", "2021-04-14 21:40:18.457411"], ["updated_at", "2021-04-14 21:40:18.457411"]]
+  ↳ app/controllers/users_controller.rb:48:in `block in create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:48:in `block in create'
+Redirected to http://3.141.22.139:8080/
+Completed 302 Found in 302ms (ActiveRecord: 6.4ms | Allocations: 6147)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_f1ovvp74jf6blvr25lo1
+Started GET "/" for 128.194.2.74 at 2021-04-14 21:40:18 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:39
+  Rendered posts/index.html.haml (Duration: 9.9ms | Allocations: 2561)
+Completed 200 OK in 15ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 3988)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_xuxjou9dxjnxa6n40apr
+Started GET "/?page=2" for 128.194.2.74 at 2021-04-14 21:40:23 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 6.4ms | Allocations: 1722)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.1ms | Allocations: 3119)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_ro2bvam4pfmuczkqr2fj
+Started GET "/posts/new" for 128.194.2.74 at 2021-04-14 21:40:26 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.haml
+  Rendered posts/new.html.haml (Duration: 7.0ms | Allocations: 4948)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 6387)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_nfp6pdim0essy8madt3x
+Started POST "/posts" for 128.194.2.74 at 2021-04-14 21:40:34 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "post"=>{"post_title"=>"qwer111", "post_description"=>"qwer", "project_motivation"=>"dsads", "github_repo_link"=>"http://3.22.119.125:8080/posts/new", "video_url"=>"http://3.22.119.125:8080/posts/new"}, "commit"=>"Save Changes"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:56:in `create'
+  [1m[36mPost Create (5.9ms)[0m  [1m[32mINSERT INTO "posts" ("post_title", "post_description", "project_motivation", "github_repo_link", "video_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["post_title", "qwer111"], ["post_description", "qwer"], ["project_motivation", "dsads"], ["github_repo_link", "http://3.22.119.125:8080/posts/new"], ["video_url", "http://3.22.119.125:8080/posts/new"], ["created_at", "2021-04-14 21:40:34.368790"], ["updated_at", "2021-04-14 21:40:34.368790"]]
+  ↳ app/controllers/posts_controller.rb:56:in `create'
+  [1m[36mTRANSACTION (13.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:56:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:61:in `create'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "username" = ?, "updated_at" = ?, "user_id" = ? WHERE "posts"."id" = ?[0m  [["username", "user12345"], ["updated_at", "2021-04-14 21:40:34.430695"], ["user_id", 6], ["id", 6]]
+  ↳ app/controllers/posts_controller.rb:61:in `create'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:61:in `create'
+Redirected to http://3.141.22.139:8080/
+Completed 302 Found in 83ms (ActiveRecord: 23.9ms | Allocations: 5682)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_z9azfphxrw9myzhpwtcg
+Started GET "/" for 128.194.2.74 at 2021-04-14 21:40:34 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:39
+  Rendered posts/index.html.haml (Duration: 9.3ms | Allocations: 2561)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.3ms | Allocations: 3984)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_ard7jhntw1czwhk9mfjg
+Started GET "/?page=2" for 128.194.2.74 at 2021-04-14 21:40:36 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  ↳ app/views/posts/index.html.haml:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:39
+  Rendered posts/index.html.haml (Duration: 9.9ms | Allocations: 2558)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.3ms | Allocations: 3955)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_p9abgzq9xfcb9nw75qb0
+Started GET "/users/user12345" for 128.194.2.74 at 2021-04-14 21:40:37 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"user12345"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user12345"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `show'
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 3.6ms | Allocations: 3242)
+Completed 200 OK in 14ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 5855)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_712av7sh69zivqjca4am
+Started GET "/?utf8=%E2%9C%93&username=user12345&commit=Search" for 128.194.2.74 at 2021-04-14 21:40:43 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"user12345", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user12345"], ["LIMIT", 1]]
+  ↳ app/models/post.rb:5:in `search'
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ? LIMIT ? OFFSET ?[0m  [["user_id", 6], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 4.9ms | Allocations: 1272)
+Completed 200 OK in 13ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 3255)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_jch5o0dfiy7b1gx6se0b
+Started GET "/?utf8=%E2%9C%93&username=user1&commit=Search" for 128.194.2.74 at 2021-04-14 21:40:53 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"user1", "commit"=>"Search"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user1"], ["LIMIT", 1]]
+  ↳ app/models/post.rb:5:in `search'
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ? LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 4.4ms | Allocations: 1182)
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 3162)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_2fau13yc4o0ly4tsjfns
+Started GET "/?page=1" for 128.194.2.74 at 2021-04-14 21:41:00 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:39
+  Rendered posts/index.html.haml (Duration: 9.9ms | Allocations: 2555)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.3ms | Allocations: 3952)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_8ftyxcz0isk89rwhd6b2
+Started GET "/?utf8=%E2%9C%93&username=&commit=Search" for 128.194.2.74 at 2021-04-14 21:43:36 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"", "commit"=>"Search"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/post.rb:5:in `search'
+Redirected to http://3.141.22.139:8080/
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms | Allocations: 1739)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_h5hij49u3ingxpi40w1q
+Started GET "/" for 128.194.2.74 at 2021-04-14 21:43:36 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:39
+  Rendered posts/index.html.haml (Duration: 10.2ms | Allocations: 2559)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.3ms | Allocations: 3982)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_lshg4vbcze6l0v74ki8g
+Started GET "/?page=2" for 128.194.2.74 at 2021-04-14 21:43:45 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 3]]
+  ↳ app/views/posts/index.html.haml:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:39
+  Rendered posts/index.html.haml (Duration: 9.5ms | Allocations: 2558)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 3955)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_rhxsqn3mb893l83p96h
+Started GET "/users/user2" for 128.194.2.74 at 2021-04-14 21:43:46 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"user2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `show'
+  Rendering users/show.html.haml
+  Rendered users/show.html.haml (Duration: 0.5ms | Allocations: 148)
+Completed 200 OK in 11ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 2506)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_rc88nd5cwjrj08vq1xja
+Started GET "/?utf8=%E2%9C%93&username=user12345&commit=Search" for 128.194.2.74 at 2021-04-14 21:43:53 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"user12345", "commit"=>"Search"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user12345"], ["LIMIT", 1]]
+  ↳ app/models/post.rb:5:in `search'
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ? LIMIT ? OFFSET ?[0m  [["user_id", 6], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 4.5ms | Allocations: 1272)
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 0.2ms | Allocations: 3256)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_5h6d8wzn40ceqcf6u3f0
+Started GET "/?utf8=%E2%9C%93&username=user1&commit=Search" for 128.194.2.74 at 2021-04-14 21:43:58 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"user1", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user1"], ["LIMIT", 1]]
+  ↳ app/models/post.rb:5:in `search'
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ? LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 4.2ms | Allocations: 1182)
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 0.3ms | Allocations: 3162)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_8pqmra6vsza7ec63hg7j
+Started GET "/?utf8=%E2%9C%93&username=user12345&commit=Search" for 128.194.2.74 at 2021-04-14 21:44:31 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"user12345", "commit"=>"Search"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user12345"], ["LIMIT", 1]]
+  ↳ app/models/post.rb:5:in `search'
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ? LIMIT ? OFFSET ?[0m  [["user_id", 6], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 5.1ms | Allocations: 1272)
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 3256)
+
+
+MiniProfiler storage failure: No such file or directory @ rb_sysopen - /home/ec2-user/environment/DevHub/tmp/miniprofiler/mp_timers_lpf615icztqlu47jfrg8
+Started GET "/" for 128.194.2.74 at 2021-04-14 21:46:20 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:39
+  Rendered posts/index.html.haml (Duration: 72.9ms | Allocations: 20092)
+Completed 200 OK in 128ms (Views: 74.3ms | ActiveRecord: 9.5ms | Allocations: 28501)
+
+
+Started GET "/?utf8=%E2%9C%93&username=user12345&commit=Search" for 128.194.2.74 at 2021-04-14 21:46:26 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"user12345", "commit"=>"Search"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user12345"], ["LIMIT", 1]]
+  ↳ app/models/post.rb:5:in `search'
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ? LIMIT ? OFFSET ?[0m  [["user_id", 6], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 4.6ms | Allocations: 1322)
+Completed 200 OK in 49ms (Views: 7.5ms | ActiveRecord: 1.1ms | Allocations: 12111)
+
+
+Started GET "/" for 209.17.97.74 at 2021-04-14 21:47:04 +0000
+Cannot render console from 209.17.97.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ? OFFSET ?[0m  [["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/views/posts/index.html.haml:39
+  Rendered posts/index.html.haml (Duration: 10.6ms | Allocations: 2565)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.3ms | Allocations: 3047)
+
+
+Started GET "/?utf8=%E2%9C%93&username=user12345&commit=Search" for 128.194.2.74 at 2021-04-14 21:57:50 +0000
+Cannot render console from 128.194.2.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "username"=>"user12345", "commit"=>"Search"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/models/post.rb:5:in `search'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "user12345"], ["LIMIT", 1]]
+  ↳ app/models/post.rb:5:in `search'
+  Rendering posts/index.html.haml
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ? LIMIT ? OFFSET ?[0m  [["user_id", 6], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.haml:25
+  Rendered posts/index.html.haml (Duration: 4.9ms | Allocations: 1298)
+Completed 200 OK in 19ms (Views: 7.6ms | ActiveRecord: 0.8ms | Allocations: 4989)
+
+
