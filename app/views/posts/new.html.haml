@@ -1,9 +1,7 @@
 %body
-	%h1 New Post
-	%p Form for creating new post goes here
-	%p Make sure to include ways to navigate to other pages from here
+	%h1 Create New Post
 
-%h2 Create New Post
+%h2 Details of Post
 = form_tag posts_path, :class => 'form' do
 	= label :post, :post_title, 'Title', :class => 'col-form-label'
 	= text_field :post, :post_title, :class => 'form-control'
