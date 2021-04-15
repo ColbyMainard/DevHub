@@ -26,6 +26,10 @@
 
 	= submit_tag 'Save Changes', :class => 'btn btn-primary'
 	= link_to 'Cancel', controller: 'posts', action: 'index', :class => 'btn btn-secondary'
+
+	- if session['username'].nil?
+		%p **Kindly login to create a new post
+
 %div
 	-if notice != nil
 		%p{class: "popup"}= notice
