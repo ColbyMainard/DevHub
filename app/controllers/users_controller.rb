@@ -6,7 +6,6 @@ class UsersController < ActionController::Base
     def index
         @users = User.all
         #gets list of all users
-        #should only be available when logged in as an admin
     end
 
     def show
