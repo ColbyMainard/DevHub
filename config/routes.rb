@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   # get 'home/index'
   # get 'misc/index'
-  resource 'users'
+  resource 'users', only: [:create, :new, :index, :destroy, :show]
   resource 'posts'
   root 'posts#index'
   get '/posts', to: 'posts#index', as: 'list_posts'
@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   # Need to identify how to make DELETE method working
   get '/posts/:id/delete', to: 'posts#destroy', as: 'delete_post'
   put '/posts/:id/edit', to: 'posts#update', as: 'updated_post'
+  get '/users', to: 'users#index', as: 'list_users'
   get '/users/new', to: 'users#new', as: 'new_user'
   get '/users/:id', to: 'users#show', as: 'show_user'
-  get '/users', to: 'users#index', as: 'list_users'
   get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
   patch '/users/:id', to: 'users#update', as: 'update_user'
   put '/users/:id/edit', to: 'userss#update', as: 'updated_user'
