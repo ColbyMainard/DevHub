@@ -30,7 +30,7 @@
                     = link_to "#{post.username}", show_user_path(post.username)
                 %td
                     = post.updated_at
-                    
+%br                    
 = link_to 'Sign up', signup_path, :class => 'btn btn-primary'  
 = link_to 'Login', log_in_path, :class => 'btn btn-primary'                    
 = link_to 'Add new post', new_post_path, :class => 'btn btn-primary'

@@ -77,6 +77,18 @@ class PostsController < ActionController::Base
     end
     def destroy
         #deletes a post
+        @post = Post.find(params[:id])
+
+        # Checks if logged in user and the post's created user are the same
+        if session['username'] == @post.username
+            @post.destroy
+            flash[:notice] = "Post '#{@post.post_title}' was successfully deleted."
+        else
+            flash[:notice] = "Failed: You do not have permission to delete '#{@post.post_title}'"
+        end
+
+                    
+        redirect_to controller: 'posts', action: 'index'
     end
     
     private
