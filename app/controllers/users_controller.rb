@@ -11,7 +11,12 @@ class UsersController < ActionController::Base
 
     def show
         #shows information on a particular user
-        set_user
+        begin
+            @user = User.find(session[:user_id])
+        rescue
+            redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
+        end
+        @user=User.find_by_username(params[:id])
     end
 
     def new
@@ -25,13 +30,13 @@ class UsersController < ActionController::Base
     
     def update
         #update user, if they exist
-        @user = User.find(params[:id])
-        if @user.update_attributes(user_params)
+        @user = User.find(session[:user_id])
+        if @user.update(user_params)
             # Handle a successful update.
-            format.html { redirect_to(@user, :notice => 'Post was successfully updated.') }
-        else
-            flash[:notices] = ["Your profile could not be updated"]
-            format.html { redirect_to action: "edit"}
+        redirect_to(show_user_path(@user.username), :notice => 'Your profile was successfully updated.') 
+     else
+           flash[:notices] = ["Your profile could not be updated"]
+           redirect_to action: "edit"
         end
     end
 
@@ -42,7 +47,7 @@ class UsersController < ActionController::Base
             respond_to do |format|
                 if @user.save
                     session[:username] = @user.username
-                    session[:user_id] = user.id
+                    session[:user_id] = @user.id
                     format.html { redirect_to root_url, notice: "Logged in!" }
                 else
                     format.html { render :new }
@@ -62,7 +67,7 @@ class UsersController < ActionController::Base
     def verifyInput params
         #checks that all parts of user login information is of proper format
         if not valid_link? params["profile_picture_link"]
-            flash[:notice] = "Username not valid. Try different combinations of length and remove special characters."
+            flash[:notice] ="Profile link not valid. Try different combinations of length and remove special characters."
             return false
         end
         #valid username - username must be a valid combination of alphanumeric characters and underscores. All other characters are to be treated as invalid
@@ -91,11 +96,11 @@ class UsersController < ActionController::Base
             return false
         end
         if not valid_social? params["instagram_handle"]
-            flash[:notice] = "Discord username not recognized."
+            flash[:notice] = "Ins username not recognized."
             return false
         end
         if not valid_link? params["github_link"]
-            flash[:notice] = "Username not valid. Try different combinations of length and remove special characters."
+            flash[:notice] = "github link not valid. Try different combinations of length and remove special characters."
             return false
         end
         return true

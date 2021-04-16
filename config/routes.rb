@@ -11,11 +11,16 @@ Rails.application.routes.draw do
   get '/posts/:id', to: 'posts#show', as: 'show_post'
   get '/posts/:id/edit', to: 'posts#edit', as: 'edit_post'
   patch '/posts/:id', to: 'posts#update', as: 'update_post'
+  # Have hardcoded the delete method for now
+  # Need to identify how to make DELETE method working
+  get '/posts/:id/delete', to: 'posts#destroy', as: 'delete_post'
   put '/posts/:id/edit', to: 'posts#update', as: 'updated_post'
   get '/users/new', to: 'users#new', as: 'new_user'
   get '/users/:id', to: 'users#show', as: 'show_user'
   get '/users', to: 'users#index', as: 'list_users'
-  get '/users/edit', to: 'users#edit', as: 'edit_user'
+  get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
+  patch '/users/:id', to: 'users#update', as: 'update_user'
+  put '/users/:id/edit', to: 'userss#update', as: 'updated_user'
   get 'login', to: 'sessions#new'
   resources :sessions, only: [:new, :create, :destroy]
   

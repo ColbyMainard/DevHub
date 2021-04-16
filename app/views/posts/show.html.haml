@@ -13,6 +13,8 @@
         = @post.post_description
 
 = link_to 'Edit posts', edit_post_path(:id => @post.id), :method => "get"
+= link_to_if @post.username == session['username'], 'Delete posts', delete_post_path(:id => @post.id), :method => "delete"
+
 %div
     -if notice != nil
         %p{class: "popup"}= notice
