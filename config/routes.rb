@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   # get 'home/index'
   # get 'misc/index'
-  resource 'users', only: [:create, :new, :index, :destroy, :show]
+  resource 'users', only: [:create, :new, :index, :destroy, :show, :update]
   resource 'posts'
   root 'posts#index'
   get '/posts', to: 'posts#index', as: 'list_posts'
