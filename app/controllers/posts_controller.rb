@@ -2,8 +2,13 @@ class PostsController < ActionController::Base
     #Posts controller methods will go here
     before_action :set_post, only: [:show, :edit, :update, :destroy]
     def index
-        if params[:username]
-            @posts = Post.search(params[:username])
+        # search by User or Keyword, according to which checkbox is checked.
+        if params[:search] && params[:checkbox]
+            if (params[:checkbox] == "username")
+                @posts = Post.search_by_user(params[:search])
+            elsif (params[:checkbox] == "keyword")
+                @posts = Post.search_by_keyword(params[:search])
+            end
             if (@posts.nil?)
                 # @posts = Post.all
                 flash[:notice] = "No matching post!"
