@@ -44,6 +44,7 @@ gem 'simplecov', '>= 0.20.0'
 gem 'rspec'
 gem 'rspec-rails'
 gem 'cucumber'
+gem 'cucumber-rails'
 gem 'database_cleaner'
 
 #handling gems with unspecified versions

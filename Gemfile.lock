@@ -107,6 +107,12 @@ GEM
       cucumber-messages (~> 13.0, >= 13.0.1)
     cucumber-messages (13.2.1)
       protobuf-cucumber (~> 3.10, >= 3.10.8)
+    cucumber-rails (2.3.0)
+      capybara (>= 2.18, < 4)
+      cucumber (>= 3.0.2, < 6)
+      mime-types (~> 3.2)
+      nokogiri (~> 1.8)
+      railties (>= 5.0, < 7)
     cucumber-tag-expressions (2.0.4)
     cucumber-wire (4.0.1)
       cucumber-core (~> 8.0, >= 8.0.1)
@@ -159,6 +165,9 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     middleware (0.1.0)
+    mime-types (3.3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2021.0225)
     mini_magick (4.11.0)
     mini_mime (1.0.3)
     minitest (5.14.4)
@@ -325,6 +334,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   cucumber
+  cucumber-rails
   cuprite
   database_cleaner
   flay (>= 2.10.0)
