@@ -1,4 +1,4 @@
-Feature: Add a post
+Feature: Edit a user
     As a user,
-    I would like to create a post
-    To share the current status of my personal projects
+    I would like to edit my information
+    To keep my account current

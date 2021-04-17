@@ -1,4 +1,4 @@
-Feature: Add a post
+Feature: Show a post
     As a user,
-    I would like to create a post
-    To share the current status of my personal projects
+    I would like to view more information about a post
+    To get more information about projects that interest me
