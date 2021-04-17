@@ -98,6 +98,7 @@ class PostsController < ActionController::Base
     end
 
     def make_post_featured
+        @post = Post.find(params[:id])
     end
 
     private
