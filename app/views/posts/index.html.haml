@@ -2,7 +2,11 @@
     %h2 All Posts
    
 = form_tag(root_path, :method => "get", id: "search-form") do
-    = text_field_tag :username, params[:username], placeholder: "Search Posts by User"
+    = text_field_tag :search, params[:search], placeholder: "Search Posts by User or Keyword"
+    = check_box_tag "checkbox", "username" 
+    = label_tag "Username"
+    = check_box_tag "checkbox", "keyword" 
+    = label_tag "Keyword"
     = submit_tag "Search"
     = hidden_field_tag "uploaded_time_sort", true if @uploaded_time_header
     = hidden_field_tag "popularity_sort", true if @popularity_header
