@@ -1,0 +1,2 @@
+Then(/^pending$/) do
+end
