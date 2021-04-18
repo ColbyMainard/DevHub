@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'cucumber'
+require 'cucumber/rake/task'
 require 'cucumber/rails'
 
 ActionController::Base.allow_rescue = false
