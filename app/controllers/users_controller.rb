@@ -12,14 +12,14 @@ class UsersController < ActionController::Base
     def show
         #shows information on a particular user
         if session[:user_id].nil?
-            puts "aaa"
             redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
         end 
-        begin
-            @user = User.find(session[:user_id])
-        rescue
-            redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
-        end
+        
+        # begin
+        #     @user = User.find(session[:user_id])
+        # rescue
+        #     redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
+        # end
         
         
         if User.find_by_username(params[:id]).nil?
