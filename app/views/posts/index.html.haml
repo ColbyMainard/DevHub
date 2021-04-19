@@ -31,10 +31,15 @@
                 %td
                     = post.updated_at
 %br                    
-= link_to 'Sign up', signup_path, :class => 'btn btn-primary'  
-= link_to 'Login', log_in_path, :class => 'btn btn-primary'                    
-= link_to 'Add new post', new_post_path, :class => 'btn btn-primary'
-= link_to 'View account', show_user_path(session[:user_id]), :class => 'btn btn-primary'
+- if logged_in?
+    = link_to 'View account', show_user_path(session[:user_id]), :class => 'btn btn-primary'
+    = link_to 'Logout', logout_path, :class => 'btn btn-primary'
+    = link_to 'Add new post', new_post_path, :class => 'btn btn-primary'
+- else
+    = link_to 'Login', log_in_path, :class => 'btn btn-primary'  
+    = link_to 'Sign up', signup_path, :class => 'btn btn-primary'  
+    
+
 .row
 = will_paginate @posts
 %div

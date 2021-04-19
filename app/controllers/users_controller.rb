@@ -11,6 +11,10 @@ class UsersController < ActionController::Base
 
     def show
         #shows information on a particular user
+        if session[:user_id].nil?
+            puts "aaa"
+            redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
+        end 
         begin
             @user = User.find(session[:user_id])
         rescue
@@ -277,3 +281,4 @@ class UsersController < ActionController::Base
             params.require(:user).permit(:profile_picture_link, :username, :email, :password, :vPassword, :discord_username, :instagram_handle, :github_link)
         end
 end
+
