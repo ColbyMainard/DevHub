@@ -18,4 +18,6 @@
                 %strong Github Handle:
                 =@user.github_link
             =button_to "Edit", edit_user_path(:id=>@user.id), :method => "get"
-            // =button_to "Delete" show_user_path(:id=>@user.id), 'data-method' => 'delete'
+            -if same_user(@user)
+                =button_to "Delete" , users_path(:id =>@user.id), :method  => 'delete'
+            

@@ -20,8 +20,8 @@ class UsersController < ActionController::Base
         # rescue
         #     redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
         # end
-        
-        
+        puts "here"
+        puts params[:id]
         if User.find_by_username(params[:id]).nil?
             @user=User.find(session[:user_id])
         else
@@ -121,9 +121,20 @@ class UsersController < ActionController::Base
     def destroy
         #deletes a particular user if they exist
         #return an error message and redirect to home page otherwise
+        #
+        #puts session[:user_id]
         @user = User.find(session[:user_id])
+        #puts "sdfsd",params[:id]
+        #puts "strtrt"
+        #@user1= User.find(params[:id])
+        #puts @user1.id
+        #puts @user1==@user
+        #if @user1 != @user
+            
+        #end
         @user.destroy
         flash[:notice] = "User '#{@user.username}' deleted."
+        session[:user_id] = nil
         redirect_to root_url
     end
 
