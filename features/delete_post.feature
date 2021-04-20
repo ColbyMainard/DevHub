@@ -8,10 +8,14 @@ Feature: Delete a post
         
     Scenario: I try to delete a post I made
         Given I am logged in
-        Then pending
+        Given I create a new post that I didn't mean to
+        When I try to delete my post
+        I should 
 
     Scenario: I try to delete a post someone else made
         Given I am logged in
+        Then pending
+        Given I am logged in as a moderator
         Then pending
 
     Scenario: I try to delete a post while not logged in
