@@ -10,8 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_16_221835) do
-
   create_table "featured_posts", force: :cascade do |t|
     t.integer "post_id", unique: true
     t.datetime "created_at", precision: 6, null: false
@@ -28,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_221835) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.text "description_text"
     t.index ["post_title"], name: "index_posts_on_post_title"
     t.index ["user_id"], name: "index_posts_on_user_id"
     t.index ["username"], name: "index_posts_on_username"

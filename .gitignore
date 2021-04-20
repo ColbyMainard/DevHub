@@ -1,4 +1,5 @@
 node_modules
+db/development.sqlite3
+db/test.sqlite3
 tmp
 log
-db/development.*

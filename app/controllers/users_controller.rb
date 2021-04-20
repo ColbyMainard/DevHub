@@ -1,21 +1,34 @@
 class UsersController < ActionController::Base
     #Users controller methods will go here
-    before_action :set_user, only: [:show, :edit, :update, :destroy]
-    layout false
+    before_action :set_user, only: [:index, :show, :edit, :update, :destroy]
+    #layout false
 
     def index
         @users = User.all
         #gets list of all users
+        #should only be available when logged in as an admin
     end
 
     def show
         #shows information on a particular user
-        begin
-            @user = User.find(session[:user_id])
-        rescue
+        if session[:user_id].nil?
             redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
+        end 
+        
+        # begin
+        #     @user = User.find(session[:user_id])
+        # rescue
+        #     redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
+        # end
+        puts "here"
+        puts params[:id]
+        if User.find_by_username(params[:id]).nil?
+            @user=User.find(session[:user_id])
+        else
+            @user=User.find_by_username(params[:id])    
         end
-        @user=User.find_by_username(params[:id])
+        
+        #puts @user.id
     end
 
     def new
@@ -108,6 +121,21 @@ class UsersController < ActionController::Base
     def destroy
         #deletes a particular user if they exist
         #return an error message and redirect to home page otherwise
+        #
+        #puts session[:user_id]
+        @user = User.find(session[:user_id])
+        #puts "sdfsd",params[:id]
+        #puts "strtrt"
+        #@user1= User.find(params[:id])
+        #puts @user1.id
+        #puts @user1==@user
+        #if @user1 != @user
+            
+        #end
+        @user.destroy
+        flash[:notice] = "User '#{@user.username}' deleted."
+        session[:user_id] = nil
+        redirect_to root_url
     end
 
     def admin_portal
@@ -255,11 +283,7 @@ class UsersController < ActionController::Base
     private
         def set_user
             #sets which user is currently logged in
-            begin
-                @user = User.find(params[:id])
-            rescue
-                redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
-            end
+            # @user = User.find(params[:id])
             # @user = User.find(params[:username])
         end
 
