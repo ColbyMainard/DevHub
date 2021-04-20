@@ -17,3 +17,7 @@ Feature: Delete a user
     Scenario: I try to delete my own account while not logged in
         Given I am not logged in
         Then pending
+
+    Scenario: I try to delete someone else as a moderator
+        Given I am logged in as a moderator
+        Then pending

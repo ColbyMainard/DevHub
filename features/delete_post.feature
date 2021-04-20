@@ -10,14 +10,22 @@ Feature: Delete a post
         Given I am logged in
         Given I create a new post that I didn't mean to
         When I try to delete my post
-        I should 
+        Then the post should no longer exist
 
     Scenario: I try to delete a post someone else made
         Given I am logged in
-        Then pending
+        Given I see someone else's post that I don't like
+        When I attempt to delete a post that isn't mine
+        Then I get a warning message telling me I can't do that
+
+    Scenario: I try to delete a post someone else made as a moderator
         Given I am logged in as a moderator
-        Then pending
+        Given I see someone else's post that I don't like
+        When I attempt to delete a post that isn't mine
+        Then the post should no longer exist
 
     Scenario: I try to delete a post while not logged in
         Given I am not logged in
-        Then pending
+        Given I see someone else's post that I don't like
+        When I attempt to delete a post that isn't mine
+        Then I get a warning message telling me I can't do that
