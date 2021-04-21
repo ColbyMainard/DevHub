@@ -12,11 +12,19 @@
     %p#description
         = @post.post_description
 
-    %p total Downvotes: #{@total_downvote}
-    %p total Upvotes: #{@total_upvote}
+%p total Downvotes: #{@total_downvote}
+%p total Upvotes: #{@total_upvote}
 
 - @vote_choices.each do |vote_choice|
     = link_to vote_choice[0], vote_path(:id => @post.id, :vote_type => vote_choice[1]), :method => "get"
+
+.rating
+    / Thumbs up
+    .like.grow
+        %span.fa.fa-thumbs-up.fa-3x.like{"aria-hidden" => "true"}
+    / Thumbs down
+    .dislike.grow
+        %span.fa.fa-thumbs-down.fa-3x.like{"aria-hidden" => "true"}
 
 %br
 %br
