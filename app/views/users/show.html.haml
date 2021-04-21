@@ -17,4 +17,7 @@
             %p 
                 %strong Github Handle:
                 =@user.github_link
-            =button_to "Edit", edit_user_path(:id=>@user.id), :method => "get"
+            
+            -if same_user(@user)
+                =button_to "Delete" , users_path(:id =>@user.id), :method  => 'delete'
+                =button_to "Edit", edit_user_path(:id=>@user.id), :method => "get"
