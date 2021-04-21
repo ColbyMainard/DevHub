@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # get 'misc/index'
   resource 'users'
   resource 'posts'
+  resource 'votes'
   root 'posts#index'
   get '/posts', to: 'posts#index', as: 'list_posts'
   get '/posts/new', to: 'posts#new', as: 'new_post'
@@ -28,4 +29,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create' #https://levelup.gitconnected.com/simple-authentication-guide-with-ruby-on-rails-16a6255f0be8
   get 'signup', to: 'users#new', as: 'signup'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+
+  # Routes for voting
+  get 'vote', to: 'votes#create', as: 'vote'
 end
