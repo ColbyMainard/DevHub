@@ -2,9 +2,14 @@ class PostsController < ActionController::Base
     #Posts controller methods will go here
     before_action :set_post, only: [:show, :edit, :update, :destroy]
     def index
-        puts @posts
-        if params[:username]
-            @posts = Post.search(params[:username])
+        # search by User or Keyword, according to which checkbox is checked.
+        if params[:search] && params[:checkbox]
+            if (params[:checkbox] == "username")
+                @posts = Post.search_by_user(params[:search])
+            elsif (params[:checkbox] == "keyword")
+                @posts = Post.search_by_keyword(params[:search])
+            end
+
             if (@posts.nil?)
                 # @posts = Post.all
                 flash[:notice] = "No matching post!"
@@ -78,6 +83,18 @@ class PostsController < ActionController::Base
     end
     def destroy
         #deletes a post
+        @post = Post.find(params[:id])
+
+        # Checks if logged in user and the post's created user are the same
+        if session['username'] == @post.username
+            @post.destroy
+            flash[:notice] = "Post '#{@post.post_title}' was successfully deleted."
+        else
+            flash[:notice] = "Failed: You do not have permission to delete '#{@post.post_title}'"
+        end
+
+                    
+        redirect_to controller: 'posts', action: 'index'
     end
     
     private

@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/home/ec2-user/environment/DevHub/config/environment.rb": {
+=======
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/environment.rb": {
+>>>>>>> 0918238800f98ec58849e89e9c1e614fbbb9727a
         "lines": [
           null,
           1,
@@ -10,7 +14,11 @@
           1
         ]
       },
+<<<<<<< HEAD
       "/home/ec2-user/environment/DevHub/config/application.rb": {
+=======
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/application.rb": {
+>>>>>>> 0918238800f98ec58849e89e9c1e614fbbb9727a
         "lines": [
           1,
           null,
@@ -23,7 +31,11 @@
           1,
           1,
           null,
+<<<<<<< HEAD
           1,
+=======
+          null,
+>>>>>>> 0918238800f98ec58849e89e9c1e614fbbb9727a
           null,
           null,
           null,
@@ -36,7 +48,11 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/home/ec2-user/environment/DevHub/config/boot.rb": {
+=======
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/boot.rb": {
+>>>>>>> 0918238800f98ec58849e89e9c1e614fbbb9727a
         "lines": [
           1,
           null,
@@ -44,7 +60,11 @@
           1
         ]
       },
+<<<<<<< HEAD
       "/home/ec2-user/environment/DevHub/config/environments/test.rb": {
+=======
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/environments/test.rb": {
+>>>>>>> 0918238800f98ec58849e89e9c1e614fbbb9727a
         "lines": [
           1,
           null,
@@ -107,10 +127,75 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/home/ec2-user/environment/DevHub/spec/controllers/users_controller_spec.rb": {
         "lines": [
           1,
           0,
+=======
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/application_controller_renderer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/assets.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/backtrace_silencers.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/content_security_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+>>>>>>> 0918238800f98ec58849e89e9c1e614fbbb9727a
           null,
           null,
           null,
@@ -125,6 +210,7 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/home/ec2-user/environment/DevHub/spec/rails_helper.rb": {
         "lines": [
           1,
@@ -169,17 +255,140 @@
         ]
       },
       "/home/ec2-user/environment/DevHub/spec/models/posts_model_spec.rb": {
+=======
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/cookies_serializer.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          1
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/mime_types.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/permissions_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/wrap_parameters.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/routes.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/helpers/application_helper.rb": {
+>>>>>>> 0918238800f98ec58849e89e9c1e614fbbb9727a
         "lines": [
           1,
           null
         ]
       },
+<<<<<<< HEAD
       "/home/ec2-user/environment/DevHub/spec/models/users_model_spec.rb": {
+=======
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/helpers/posts_helper.rb": {
+>>>>>>> 0918238800f98ec58849e89e9c1e614fbbb9727a
         "lines": [
           1,
           null
         ]
       },
+<<<<<<< HEAD
       "/home/ec2-user/environment/DevHub/spec/routing/posts_routing_spec.rb": {
         "lines": [
           1,
@@ -191,12 +400,445 @@
       "/home/ec2-user/environment/DevHub/spec/routing/users_routing_spec.rb": {
         "lines": [
           1,
+=======
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/controllers/posts_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          1,
+          null,
+          0,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/controllers/users_controller_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/helpers/posts_helper_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/helpers/users_helper_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/models/posts_model_spec.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/models/users_model_spec.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/routing/posts_routing_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/routing/users_routing_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+>>>>>>> 0918238800f98ec58849e89e9c1e614fbbb9727a
           0,
           null,
           null
         ]
       }
     },
+<<<<<<< HEAD
     "timestamp": 1618095666
+=======
+    "timestamp": 1618703284
+>>>>>>> 0918238800f98ec58849e89e9c1e614fbbb9727a
   }
 }

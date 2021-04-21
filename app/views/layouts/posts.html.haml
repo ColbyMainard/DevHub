@@ -1,0 +1,14 @@
+!!!
+%html
+	%head
+		%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+	%title Posts
+
+	%body
+		%br
+		- if session['username'].nil?
+			%footer Welcome to DevHub!! Kindly Signup/login to continue
+		- else
+			%footer Welcome to DevHub, #{session['username']}!!!
+		= yield
+     

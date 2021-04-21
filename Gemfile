@@ -45,6 +45,7 @@ gem 'simplecov', '>= 0.20.0'
 gem 'rspec'
 gem 'rspec-rails'
 gem 'cucumber'
+gem 'cucumber-rails'
 gem 'database_cleaner'
 
 #handling gems with unspecified versions
@@ -72,6 +73,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
+  gem 'cuprite'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
