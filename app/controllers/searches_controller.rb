@@ -14,6 +14,14 @@ class SearchesController < ApplicationController
         redirect_to controller: 'searches', action: 'show', id: @search.id
     end 
     
+    def destroy
+        
+        #deletes a search history
+        @search = Search.find(params[:id])
+        @search.destroy
+        redirect_to controller: 'posts', action: 'index'
+    end 
+    
     private
 
     def search_params

@@ -1,7 +1,9 @@
 %body
     %div
         %h1 Search Results
-        %p= link_to "Back", root_path
+        %p= link_to "Back to Homepage", root_path
+        %p= link_to "Start New Search", new_searches_path
+        %p= link_to "Clear Your this Search Record", searches_path(:id => @search.id), :method => "delete"
         - if @posts.empty?
             %p No matching posts were found.
         - else
