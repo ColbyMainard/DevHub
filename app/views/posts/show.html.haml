@@ -12,24 +12,18 @@
     %p#description
         = markdown(@post.post_description)
 
-%p total Downvotes: #{@total_downvote}
-%p total Upvotes: #{@total_upvote}
-
-- @vote_choices.each do |vote_choice|
-    = link_to vote_choice[0], vote_path(:id => @post.id, :vote_type => vote_choice[1]), :method => "get"
-
 .rating
-    / Thumbs up
+    /Thumbs up
     .like.grow
-        %span.fa.fa-thumbs-up.fa-3x.like{"aria-hidden" => "true"}
-    / Thumbs down
+        = link_to "  #{@total_upvote}  ", vote_path(:id => @post.id, :vote_type => 1), :method => "get", :class => "span fa fa-thumbs-up fa-2x like", "aria-hidden" => "true"
+    /Thumbs down
     .dislike.grow
-        %span.fa.fa-thumbs-down.fa-3x.like{"aria-hidden" => "true"}
+        = link_to "  #{@total_downvote}  ", vote_path(:id => @post.id, :vote_type => 0), :method => "get", :class => "span fa fa-thumbs-down fa-2x like", "aria-hidden" => "true", :id => "vote_thumbs_down"
 
 %br
 %br
-= link_to 'Edit posts', edit_post_path(:id => @post.id), :method => "get"
-= link_to_if @post.username == session['username'], 'Delete posts', delete_post_path(:id => @post.id), :method => "delete"
+= link_to 'Edit posts', edit_post_path(:id => @post.id), :method => "get", :class => "btn btn-warning"
+= link_to_if @post.username == session['username'], 'Delete posts', delete_post_path(:id => @post.id), :method => "delete", :class => "btn btn-danger"
 
 %div
     -if notice != nil
