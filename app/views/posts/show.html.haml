@@ -10,7 +10,7 @@
         
     %h3 Description:
     %p#description
-        = @post.post_description
+        = markdown(@post.post_description)
 
 %p total Downvotes: #{@total_downvote}
 %p total Upvotes: #{@total_upvote}
