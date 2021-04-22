@@ -11,7 +11,8 @@
     = hidden_field_tag "uploaded_time_sort", true if @uploaded_time_header
     = hidden_field_tag "popularity_sort", true if @popularity_header
     = hidden_field_tag "title_sort", true if @title_header
-
+    
+= link_to "Advanced Search", new_searches_path, :class => 'btn btn-primary'
   
 %table#posts.table.table-striped.col-md-12
     %thead
