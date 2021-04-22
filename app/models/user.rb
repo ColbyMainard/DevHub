@@ -1,5 +1,7 @@
 class User < ApplicationRecord
     has_many :posts, :dependent => :destroy
+    has_many :votes
+    has_many :liked_posts, through: :votes
     
     attr_accessor :vPassword
     validates :email, presence: true

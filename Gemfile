@@ -53,8 +53,14 @@ gem 'regexp_parser', '2.1.1'
 gem 'nio4r', '2.5.7'
 gem 'marcel', '1.0.1'
 
+
+gem 'redcarpet'
+
 # pagination of index page
 gem 'will_paginate', '3.3.0'
+
+# for CSS
+gem 'font-awesome-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

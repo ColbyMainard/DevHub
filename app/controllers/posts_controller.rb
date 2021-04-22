@@ -38,6 +38,14 @@ class PostsController < ActionController::Base
     def show
         #gets an individual post
         @post = Post.find(params[:id])
+
+        # List of choices to vote
+        @vote_choices = Vote.selectable_vote_types
+
+        # Count of upvote and downvote by distinct user
+        @total_upvote = Vote.total_upvote(params['id'])
+        @total_downvote = Vote.total_downvote(params['id'])
+        
     end
     
     def new
