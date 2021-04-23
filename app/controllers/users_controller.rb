@@ -292,4 +292,3 @@ class UsersController < ActionController::Base
             params.require(:user).permit(:profile_picture_link, :username, :email, :password, :vPassword, :discord_username, :instagram_handle, :github_link)
         end
 end
-
