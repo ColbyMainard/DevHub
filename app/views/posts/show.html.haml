@@ -4,7 +4,8 @@
     
     %ul#details
     %li
-        Author: #{@post.username}
+        Author: 
+        %p= link_to "#{@post.username}", root_path(:username => @post.username)
     %li
         Last updated on: #{@post.updated_at}
         

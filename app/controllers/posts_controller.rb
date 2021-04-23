@@ -3,8 +3,13 @@ class PostsController < ActionController::Base
     before_action :set_post, only: [:show, :edit, :update, :destroy]
     def index
         # search by User or Keyword, according to which checkbox is checked.
-        if params[:search]
-            @posts = Post.search_by_keyword(params[:search])
+        if params[:search] || params[:username] 
+            if params[:search]
+                @posts = Post.search_by_keyword(params[:search])
+            else 
+                @posts = Post.search_by_user(params[:username])
+                @list_posts_by_user = params[:username]
+            end
             if (!@posts.nil?)
                 @search_success = 1
             else

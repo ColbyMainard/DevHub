@@ -1,5 +1,7 @@
 %body
     %h2 All Posts
+    - if @list_posts_by_user
+        %h3 By #{@list_posts_by_user}
    
     = form_tag(root_path, :method => "get", id: "search-form") do
         = text_field_tag :search, params[:search], placeholder: "Search Posts by Title"
@@ -24,7 +26,7 @@
                     %td
                         = link_to "#{post.post_title}", show_post_path(post)
                     %td
-                        = link_to "#{post.username}", show_user_path(post.username)
+                        = link_to "#{post.username}", root_path(:username => post.username)
                     %td
                         = post.updated_at
 %br                    
