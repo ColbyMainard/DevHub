@@ -1,0 +1,28 @@
+%body
+    %div
+        %h1 Search Results
+        %p= link_to "Back to Homepage", root_path
+        %p= link_to "Start New Search", new_searches_path
+        %p= link_to "Clear Your this Search Record", searches_path(:id => @search.id), :method => "delete"
+        - if @posts.empty?
+            %p No matching posts were found.
+        - else
+            %table
+                %thead
+                    %tr
+                        %th Title
+                        %th Username
+                        %th Last Updated Time
+                    
+                %tbody
+                    - @posts.each do |post|
+                        %tr
+                            %td
+                                = link_to "#{post.post_title}", show_post_path(post)
+                            %td
+                                = link_to "#{post.username}", show_user_path(post.username)
+                            %td
+                                = post.updated_at
+    
+.row
+= will_paginate @posts

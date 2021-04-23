@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resource 'users', :only => [:index,:destroy,:new,:update,:create]
   resource 'posts'
   resource 'votes'
+  resource "searches"
   
   root 'posts#index'
   get '/posts', to: 'posts#index', as: 'list_posts'

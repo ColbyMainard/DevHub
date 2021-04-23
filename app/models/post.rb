@@ -15,7 +15,5 @@ class Post < ApplicationRecord
     def self.search_by_keyword(keyword)
         # find the posts whose title includes the keyword
         return Post.where("post_title like ?", "%#{keyword}%")
-        
-        # keyword in post description?
     end
 end
