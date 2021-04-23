@@ -2,6 +2,7 @@ Then(/^pending$/) do
 end
 
 Given(/^I create a new post that I didn't mean to$/) do
+    visit new_post_url
 end
 
 When(/^I try to delete my post$/) do 

@@ -15,3 +15,5 @@ Feature: Add a post
         Given I am logged in
         When I attempt to create a new post
         Then I should be brought to the new post form
+        When I submit the new post form
+        Then I should be able to find my post on the list of all posts
