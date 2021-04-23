@@ -115,6 +115,15 @@ class PostsController < ActionController::Base
 
     def make_post_featured
         @post = Post.find(params[:id])
+        begin
+            @user = Users.find(session['user_id'])
+            if @user.is_admin()
+                FeaturedPosts.add(params[:id])
+            end
+        rescue
+            flash[:notice] = "You can't make that post featured."
+            redirect_to controller: 'posts', action: 'index'
+        end
     end
 
     private
