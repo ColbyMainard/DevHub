@@ -3,13 +3,16 @@ class PostsController < ActionController::Base
     before_action :set_post, only: [:show, :edit, :update, :destroy]
     def index
         # search by User or Keyword, according to which checkbox is checked.
-        if params[:search] && params[:checkbox]
-            if (params[:checkbox] == "username")
-                @posts = Post.search_by_user(params[:search])
-            elsif (params[:checkbox] == "keyword")
+        if params[:search] || params[:username] 
+            if params[:search]
                 @posts = Post.search_by_keyword(params[:search])
+            else 
+                @posts = Post.search_by_user(params[:username])
+                @list_posts_by_user = params[:username]
             end
-            if (@posts.nil?)
+            if (!@posts.nil?)
+                @search_success = 1
+            else
                 # @posts = Post.all
                 flash[:notice] = "No matching post!"
                 redirect_to controller: 'posts', action: 'index'
@@ -34,6 +37,7 @@ class PostsController < ActionController::Base
         @posts = @posts.order(ordered)
         @posts = @posts.paginate(page: params[:page], per_page: 3)
     end
+
     def show
         #gets an individual post
         @post = Post.find(params[:id])
@@ -46,13 +50,16 @@ class PostsController < ActionController::Base
         @total_downvote = Vote.total_downvote(params['id'])
         
     end
+    
     def new
         #create a new post
     end
+    
     def edit
         #edits a given post
         @post = Post.find(params[:id])
     end
+    
     def create
         # login or not?
         if session[:user_id].nil?
@@ -81,6 +88,7 @@ class PostsController < ActionController::Base
         #redirect_to movies_path
 
     end
+    
     def update
         #updates a post after an edit
         @post = Post.find(params[:id])
@@ -88,6 +96,7 @@ class PostsController < ActionController::Base
         flash[:notice] = "#{@post=>post_title} was successfully created"
         redirect_to controller: 'posts', action: 'index'
     end
+    
     def destroy
         #deletes a post
         @post = Post.find(params[:id])
@@ -103,11 +112,25 @@ class PostsController < ActionController::Base
                     
         redirect_to controller: 'posts', action: 'index'
     end
-    
+
+    def make_post_featured
+        @post = Post.find(params[:id])
+        begin
+            @user = Users.find(session['user_id'])
+            if @user.is_admin()
+                FeaturedPosts.add(params[:id])
+            end
+        rescue
+            flash[:notice] = "You can't make that post featured."
+            redirect_to controller: 'posts', action: 'index'
+        end
+    end
+
     private
         def set_post
             #determine which post is being acted on
         end
+        
         def post_params
             #the internet is scary
             params.require(:post).permit(:post_title, :post_description, :project_motivation, :github_repo_link, :video_url, :uploaded_time)

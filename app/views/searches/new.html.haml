@@ -1,0 +1,16 @@
+%body
+	%div
+		%h1 Advanced Search
+		= form_with model: @search do |f|
+			= f.label :name
+			= f.text_field :username
+			
+			= f.label :topic
+			= f.select :topic, options_for_select(@topics), include_blank: true
+  
+			= f.label :keyword
+			= f.text_field :keyword
+
+			= f.submit "Search"
+			
+%p= link_to "Back", root_path
