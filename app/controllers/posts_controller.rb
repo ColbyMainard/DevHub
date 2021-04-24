@@ -125,6 +125,7 @@ class PostsController < ActionController::Base
             redirect_to controller: 'posts', action: 'index'
         end
     end
+    
 
     private
         def set_post

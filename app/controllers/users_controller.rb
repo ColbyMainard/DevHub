@@ -9,7 +9,7 @@ class UsersController < ActionController::Base
         #gets list of all users
         #should only be available when logged in as an admin
     end
-
+    
     def show
         #shows information on a particular user
         if session[:user_id].nil?
@@ -23,14 +23,22 @@ class UsersController < ActionController::Base
         # end
         puts "here"
         puts params[:id]
-        if User.find_by_username(params[:id]).nil?
-            @user=User.find(session[:user_id])
-        else
-            @user=User.find_by_username(params[:id])    
-        end
+     #   if User.find_by_username(params[:id]).nil?
+        @user=User.find(params[:id])
+      #  else
+        #   @user=User.find_by_username(params[:id])    
+       # end
         
         #puts @user.id
     end
+    
+     def savedposts
+     puts "here"
+     puts params[:id]     
+     @user=User.find(params[:id])
+     @posts = @user.posts
+    end  
+    
 
     def new
         #creates a new default user
@@ -46,7 +54,7 @@ class UsersController < ActionController::Base
         @user = User.find(session[:user_id])
         if @user.update(user_params)
             # Handle a successful update.
-        redirect_to(show_user_path(@user.username), :notice => 'Your profile was successfully updated.') 
+        redirect_to(show_user_path(@user.id), :notice => 'Your profile was successfully updated.') 
      else
            flash[:notices] = ["Your profile could not be updated"]
            redirect_to action: "edit"

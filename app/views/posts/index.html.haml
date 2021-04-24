@@ -15,11 +15,11 @@
     %table#posts.table.table-striped.col-md-12
         %thead
             %tr
+
                 %th{:class => @title_header}=link_to 'Post Title', root_path(:order => 'title'), :id => 'title_header'
                 %th 
                     = link_to 'Users', list_users_path
                 %th{:class => @uploaded_time_header}=link_to 'Last Update', root_path(:order => 'uploaded_time'), :id => 'uploaded_time_header'
-                %th More Info
         %tbody
             - @posts.each do |post|
                 %tr
@@ -40,8 +40,6 @@
     
 - if @search_success
     %p= link_to "Back to Homepage", root_path
-
-    
 
 .row
 = will_paginate @posts
