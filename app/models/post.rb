@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
     belongs_to :user, optional: true
-    has_many :votes
+    has_many :votes, :dependent => :destroy
     has_many :votants, through: :votes
     
     def self.search_by_user(username)

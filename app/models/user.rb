@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_many :posts, :dependent => :destroy
-    has_many :votes
+    has_many :votes, :dependent => :destroy
     has_many :liked_posts, through: :votes
     
     attr_accessor :vPassword
