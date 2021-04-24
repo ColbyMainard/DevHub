@@ -15,6 +15,7 @@
     %table#posts.table.table-striped.col-md-12
         %thead
             %tr
+
                 %th{:class => @title_header}=link_to 'Post Title', root_path(:order => 'title'), :id => 'title_header'
                 %th 
                     = link_to 'Users', list_users_path
@@ -39,8 +40,6 @@
     
 - if @search_success
     %p= link_to "Back to Homepage", root_path
-
-    
 
 .row
 = will_paginate @posts
