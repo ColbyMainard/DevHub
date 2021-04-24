@@ -5,6 +5,7 @@
             %div{class: "box"}
                 = text_field_tag :username, nil, placeholder: "Username"
                 = password_field_tag :password, nil, placeholder: "Password"
+                = link_to "(forgot password)", new_password_reset_path
                 %input{:type => "submit", :value => "Sign in"}
 
 %div
