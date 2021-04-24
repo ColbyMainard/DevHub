@@ -19,6 +19,8 @@
                 = form.text_field :instagram_handle, placeholder: "Instagram Handle"
                 %p GitHub
                 = form.text_field :github_link, placeholder: "GitHub Link"
+                %p Admin?
+                = form.text_field :is_admin, placeholder: "True, False"
                 =button_tag 'Create Account', type: 'submit', disabled: false
     %div
         - if flash[:notice] != nil

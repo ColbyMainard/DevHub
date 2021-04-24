@@ -1,5 +1,6 @@
 class UsersController < ActionController::Base
     #Users controller methods will go here
+    #before_filter :authorize_user!, except: [:new, :create]
     before_action :set_user, only: [:index, :show, :edit, :update, :destroy]
     #layout false
 
@@ -140,6 +141,17 @@ class UsersController < ActionController::Base
 
     def admin_portal
         #if a user is not logged in or is not moderator, send them back to home page and tell them "Silly user: admin priviledges are for moderators"
+        @user = User.find(session[:user_id])
+        if @user.nil?
+            flash[:notice] = "You need to log in first."
+            redirect_to root_url
+          elsif !@user.is_admin?
+            flash[:notice] = "User '#{@user.username}' is not admin."
+            redirect_to root_url
+          else
+            flash[:notice] = "User '#{@user.username}' is an admin."
+            redirect_to admin_user_url
+          end
     end
 
     def admin
@@ -289,6 +301,6 @@ class UsersController < ActionController::Base
 
         def user_params
             #Verify user parameters, because internet people be spooky
-            params.require(:user).permit(:profile_picture_link, :username, :email, :password, :vPassword, :discord_username, :instagram_handle, :github_link)
+            params.require(:user).permit(:profile_picture_link, :username, :email, :password, :vPassword, :discord_username, :instagram_handle, :github_link, :is_admin)
         end
 end
