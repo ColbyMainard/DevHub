@@ -1,5 +1,6 @@
 
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
   # get 'home/index'
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
   get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
   patch '/users/:id', to: 'users#update', as: 'update_user'
   put '/users/:id/edit', to: 'userss#update', as: 'updated_user'
+  #get '/users/admin_portal', to: 'users#admin_portal', as: 'admin_user'
+  get 'admin', to: 'users#admin_portal', as: 'admin_user'
   get 'login', to: 'sessions#new'
   resources :sessions, only: [:new, :create, :destroy]
   
