@@ -13,11 +13,8 @@
 ActiveRecord::Schema.define(version: 2021_04_22_024956) do
 
   create_table "featured_posts", force: :cascade do |t|
-<<<<<<< HEAD
     t.integer "post_id"
-=======
     t.integer "post_id" , unique: true
->>>>>>> main
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
