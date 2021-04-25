@@ -8,8 +8,10 @@ Feature: Login to an existing account
     
     Scenario: I try to log out while I am logged in
         Given I am logged in
-        Then pending
+        When I attempt to log out
+        Then I should recieve a notice that I have successfully logged out
     
     Scenario: I try to log out while I am not logged in
         Given I am not logged in
-        Then pending
+        When I attempt to log out
+        Then I should not succeed in logging out of a session that was never created

@@ -8,8 +8,10 @@ Feature: Show a post
 
     Scenario: I try to view a post's details while logged in
         Given I am logged in
-        Then pending
+        When I attempt to view the details of someone else's post
+        Then I should see more information about their posts
 
     Scenario: I try to view a posts details while logged out
         Given I am not logged in
-        Then pending
+        When I attempt to view the details of someone else's post
+        Then I should see more information about their posts

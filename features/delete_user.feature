@@ -8,16 +8,22 @@ Feature: Delete a user
 
     Scenario: I try to delete my own account
         Given I am logged in
-        Then pending
+        When I visit my profile and click delete
+        Then my account has been deleted
 
     Scenario: I try to delete someone else's account
         Given I am logged in
-        Then pending
+        And I see the account of someone I don't like
+        When I visit their account and try to delete them
+        Then their account should not be deleted
 
     Scenario: I try to delete my own account while not logged in
         Given I am not logged in
-        Then pending
+        When I visit my profile and click delete
+        Then my account should not be deleted
 
     Scenario: I try to delete someone else as a moderator
         Given I am logged in as a moderator
-        Then pending
+        And I see the account of someone I don't like
+        When I visit their account and try to delete them
+        Then their account should not be deleted
