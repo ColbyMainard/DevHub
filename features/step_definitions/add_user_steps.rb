@@ -39,7 +39,7 @@ When(/^I fill out the entire signup form and forget the verification password an
 end
 
 Then(/^I should have successfully logged in as a new user$/) do
-    expect(page).to have_text('Posts Welcome to DevHub, ColbyMainard!!!')
+    expect(page).to have_text('Welcome to DevHub, ColbyMainard!!!')
 end
 
 Then(/^I should have unsuccessfully logged in as a new user$/) do

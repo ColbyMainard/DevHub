@@ -1,35 +1,34 @@
 %body
     %h2 All Posts
+    - if @list_posts_by_user
+        %h3 By #{@list_posts_by_user}
    
-= form_tag(root_path, :method => "get", id: "search-form") do
-    = text_field_tag :search, params[:search], placeholder: "Search Posts by User or Keyword"
-    = check_box_tag "checkbox", "username" 
-    = label_tag "Username"
-    = check_box_tag "checkbox", "keyword" 
-    = label_tag "Keyword"
-    = submit_tag "Search"
-    = hidden_field_tag "uploaded_time_sort", true if @uploaded_time_header
-    = hidden_field_tag "popularity_sort", true if @popularity_header
-    = hidden_field_tag "title_sort", true if @title_header
-
+    = form_tag(root_path, :method => "get", id: "search-form") do
+        = text_field_tag :search, params[:search], placeholder: "Search Posts by Title"
+        = submit_tag "Simple Search"
+        = hidden_field_tag "uploaded_time_sort", true if @uploaded_time_header
+        = hidden_field_tag "popularity_sort", true if @popularity_header
+        = hidden_field_tag "title_sort", true if @title_header
+        
+    %p= link_to "Advanced Search", new_searches_path, :class => 'btn btn-primary'
   
-%table#posts.table.table-striped.col-md-12
-    %thead
-        %tr
-            %th{:class => @title_header}=link_to 'Post Title', root_path(:order => 'title'), :id => 'title_header'
-            %th 
-                = link_to 'Users', list_users_path
-            %th{:class => @uploaded_time_header}=link_to 'Last Update', root_path(:order => 'uploaded_time'), :id => 'uploaded_time_header'
-            %th More Info
-    %tbody
-        - @posts.each do |post|
+    %table#posts.table.table-striped.col-md-12
+        %thead
             %tr
-                %td
-                    = link_to "#{post.post_title}", show_post_path(post)
-                %td
-                    = link_to "#{post.username}", show_user_path(post.username)
-                %td
-                    = post.updated_at
+
+                %th{:class => @title_header}=link_to 'Post Title', root_path(:order => 'title'), :id => 'title_header'
+                %th 
+                    = link_to 'Users', list_users_path
+                %th{:class => @uploaded_time_header}=link_to 'Last Update', root_path(:order => 'uploaded_time'), :id => 'uploaded_time_header'
+        %tbody
+            - @posts.each do |post|
+                %tr
+                    %td
+                        = link_to "#{post.post_title}", show_post_path(post)
+                    %td
+                        = link_to "#{post.username}", root_path(:username => post.username)
+                    %td
+                        = post.updated_at
 %br                    
 - if logged_in?
     = link_to 'View account', show_user_path(session[:user_id]), :class => 'btn btn-primary'
@@ -39,6 +38,8 @@
     = link_to 'Login', log_in_path, :class => 'btn btn-primary'  
     = link_to 'Sign up', signup_path, :class => 'btn btn-primary'  
     
+- if @search_success
+    %p= link_to "Back to Homepage", root_path
 
 .row
 = will_paginate @posts

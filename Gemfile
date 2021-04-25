@@ -21,11 +21,16 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# Use Rails engine to provide easy-to-use interface for managing the data: https://github.com/sferik/rails_admin
+gem 'rails_admin', '~> 2.0'
 
 gem 'haml'
 
 #dependencies of code quality gems
 gem 'rexml'
+
+#for UML diagrams
+gem 'railroady'
 
 # Use Active Storage variant
 #gem 'image_processing', '~> 1.2'
@@ -44,7 +49,6 @@ gem 'simplecov', '>= 0.20.0'
 gem 'rspec'
 gem 'rspec-rails'
 gem 'cucumber'
-gem 'cucumber-rails'
 gem 'database_cleaner'
 
 #handling gems with unspecified versions
@@ -79,6 +83,7 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'cuprite'
+  gem 'cucumber-rails', require: false
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'

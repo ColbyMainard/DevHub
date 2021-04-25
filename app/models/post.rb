@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
     belongs_to :user, optional: true
-    has_many :votes
+    has_many :votes, :dependent => :destroy
     has_many :votants, through: :votes
     
     def self.search_by_user(username)
@@ -15,7 +15,5 @@ class Post < ApplicationRecord
     def self.search_by_keyword(keyword)
         # find the posts whose title includes the keyword
         return Post.where("post_title like ?", "%#{keyword}%")
-        
-        # keyword in post description?
     end
 end
