@@ -1,19 +1,30 @@
 %body
-    %h2
-    %em= @post.post_title
+    %h2 
+        %em= @post.post_title
     
     %ul#details
     %li
-        Author: #{@post.username}
+        Author: 
+        %p= link_to "#{@post.username}", root_path(:username => @post.username)
     %li
         Last updated on: #{@post.updated_at}
         
     %h3 Description:
     %p#description
-        = @post.post_description
+        = markdown(@post.post_description)
 
-= link_to 'Edit posts', edit_post_path(:id => @post.id), :method => "get"
-= link_to_if @post.username == session['username'], 'Delete posts', delete_post_path(:id => @post.id), :method => "delete"
+.rating
+    /Thumbs up
+    .like.grow
+        = link_to "  #{@total_upvote}  ", vote_path(:id => @post.id, :vote_type => 1), :method => "get", :class => "span fa fa-thumbs-up fa-2x like", "aria-hidden" => "true"
+    /Thumbs down
+    .dislike.grow
+        = link_to "  #{@total_downvote}  ", vote_path(:id => @post.id, :vote_type => 0), :method => "get", :class => "span fa fa-thumbs-down fa-2x like", "aria-hidden" => "true", :id => "vote_thumbs_down"
+
+%br
+%br
+= link_to 'Edit posts', edit_post_path(:id => @post.id), :method => "get", :class => "btn btn-warning"
+= link_to_if @post.username == session['username'], 'Delete posts', delete_post_path(:id => @post.id), :method => "delete", :class => "btn btn-danger"
 
 %div
     -if notice != nil

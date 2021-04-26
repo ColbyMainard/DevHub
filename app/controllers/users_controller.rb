@@ -1,5 +1,6 @@
 class UsersController < ActionController::Base
     #Users controller methods will go here
+    #before_filter :authorize_user!, except: [:new, :create]
     before_action :set_user, only: [:index, :show, :edit, :update, :destroy]
     #layout false
 
@@ -8,7 +9,7 @@ class UsersController < ActionController::Base
         #gets list of all users
         #should only be available when logged in as an admin
     end
-
+    
     def show
         #shows information on a particular user
         if session[:user_id].nil?
@@ -22,14 +23,22 @@ class UsersController < ActionController::Base
         # end
         puts "here"
         puts params[:id]
-        if User.find_by_username(params[:id]).nil?
-            @user=User.find(session[:user_id])
-        else
-            @user=User.find_by_username(params[:id])    
-        end
+     #   if User.find_by_username(params[:id]).nil?
+        @user=User.find(params[:id])
+      #  else
+        #   @user=User.find_by_username(params[:id])    
+       # end
         
         #puts @user.id
     end
+    
+     def savedposts
+     puts "here"
+     puts params[:id]     
+     @user=User.find(params[:id])
+     @posts = @user.posts
+    end  
+    
 
     def new
         #creates a new default user
@@ -45,7 +54,7 @@ class UsersController < ActionController::Base
         @user = User.find(session[:user_id])
         if @user.update(user_params)
             # Handle a successful update.
-        redirect_to(show_user_path(@user.username), :notice => 'Your profile was successfully updated.') 
+        redirect_to(show_user_path(@user.id), :notice => 'Your profile was successfully updated.') 
      else
            flash[:notices] = ["Your profile could not be updated"]
            redirect_to action: "edit"
@@ -140,6 +149,18 @@ class UsersController < ActionController::Base
 
     def admin_portal
         #if a user is not logged in or is not moderator, send them back to home page and tell them "Silly user: admin priviledges are for moderators"
+        if session[:user_id].nil?
+            redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
+        else
+            @user = User.find(session[:user_id])
+            if @user.nil?
+                flash[:notice] = "You need to log in first."
+                redirect_to root_url
+            elsif !@user.is_admin?
+                flash[:notice] = "User '#{@user.username}' is not admin."
+                redirect_to root_url
+            end
+        end
     end
 
     def admin
@@ -289,7 +310,6 @@ class UsersController < ActionController::Base
 
         def user_params
             #Verify user parameters, because internet people be spooky
-            params.require(:user).permit(:profile_picture_link, :username, :email, :password, :vPassword, :discord_username, :instagram_handle, :github_link)
+            params.require(:user).permit(:profile_picture_link, :username, :email, :password, :vPassword, :discord_username, :instagram_handle, :github_link, :is_admin)
         end
 end
-

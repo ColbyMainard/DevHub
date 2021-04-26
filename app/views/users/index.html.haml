@@ -25,6 +25,7 @@
                     =link_to "more info", show_user_path(:id=>user.id)
     
 = link_to 'Add new user', new_user_path
+= link_to 'Admin Portal', admin_user_path(session[:user_id]), :class => 'btn btn-primary'
 %div
     -if notice != nil
         %p{class: "popup"}= notice

@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_17_025030) do
+ActiveRecord::Schema.define(version: 2021_04_22_024956) do
+
+  create_table "featured_posts", force: :cascade do |t|
+    t.integer "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "username"
@@ -28,6 +34,14 @@ ActiveRecord::Schema.define(version: 2021_04_17_025030) do
     t.index ["username"], name: "index_posts_on_username"
   end
 
+  create_table "searches", force: :cascade do |t|
+    t.string "username"
+    t.string "topic"
+    t.string "keyword"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "profile_picture_link"
     t.string "username"
@@ -42,5 +56,17 @@ ActiveRecord::Schema.define(version: 2021_04_17_025030) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "vote_type"
+    t.index ["post_id"], name: "index_votes_on_post_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
   add_foreign_key "posts", "users"
+  add_foreign_key "votes", "posts"
+  add_foreign_key "votes", "users"
 end
