@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/mnt/c/Users/Hayoung/github/DevHub/config/environment.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/application.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/application.rb": {
         "lines": [
           1,
           null,
@@ -36,7 +36,7 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/boot.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -44,7 +44,7 @@
           1
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/environments/test.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -107,7 +107,7 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/initializers/application_controller_renderer.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -119,7 +119,7 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/initializers/assets.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -137,7 +137,7 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/initializers/backtrace_silencers.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -149,7 +149,7 @@
           1
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/initializers/content_security_policy.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -183,7 +183,7 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/initializers/cookies_serializer.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -192,7 +192,7 @@
           1
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/initializers/filter_parameter_logging.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -202,36 +202,13 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/initializers/inflections.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/initializers/mime_types.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/initializers/permissions_policy.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -245,7 +222,30 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/initializers/rails_admin.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/mime_types.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/permissions_policy.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/rails_admin.rb": {
         "lines": [
           1,
           null,
@@ -309,7 +309,7 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/initializers/wrap_parameters.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -327,7 +327,7 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/config/routes.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/config/routes.rb": {
         "lines": [
           null,
           1,
@@ -374,7 +374,7 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/app/helpers/application_helper.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/helpers/application_helper.rb": {
         "lines": [
           1,
           1,
@@ -387,19 +387,19 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/app/helpers/posts_helper.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/helpers/posts_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/app/helpers/searches_helper.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/helpers/searches_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/app/helpers/sessions_helper.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/helpers/sessions_helper.rb": {
         "lines": [
           1,
           null,
@@ -422,7 +422,7 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/app/helpers/users_helper.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/helpers/users_helper.rb": {
         "lines": [
           1,
           1,
@@ -440,87 +440,22 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/app/helpers/votes_helper.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/helpers/votes_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/app/controllers/posts_controller.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/controllers/posts_controller.rb": {
         "lines": [
           1,
           null,
           1,
           1,
           null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
           0,
           0,
           0,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           0,
           0,
@@ -528,46 +463,36 @@
           0,
           0,
           null,
-          0,
           null,
           0,
           0,
+          0,
           null,
           null,
+          0,
           null,
-          null,
-          null,
-          null,
-          null,
-          1,
           null,
           0,
           0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
           0,
           0,
           null,
           null,
           1,
           null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
           0,
           null,
           null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
           0,
           null,
           null,
@@ -576,8 +501,6 @@
           null,
           null,
           null,
-          null,
-          1,
           1,
           null,
           null,
@@ -586,22 +509,76 @@
           null,
           0,
           null,
-          null
-        ]
-      },
-      "/mnt/c/Users/Hayoung/github/DevHub/app/models/post.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
           null,
           1,
+          null,
           0,
           0,
           0,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
           null,
           null,
           null,
@@ -612,14 +589,138 @@
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/app/models/application_record.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/controllers/users_controller_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/helpers/posts_helper_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/helpers/searches_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/helpers/users_helper_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/helpers/votes_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/models/featured_post_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/models/featured_post.rb": {
+        "lines": [
+
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/models/posts_model_spec.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/models/search_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/models/search.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/mnt/c/Users/Hayoung/github/DevHub/app/models/vote.rb": {
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/models/users_model_spec.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/models/vote_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/models/vote.rb": {
         "lines": [
           1,
           1,
@@ -628,17 +729,374 @@
           1,
           null,
           1,
+          0,
+          null,
+          null,
           1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/requests/searches_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/requests/votes_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/routing/posts_routing_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/spec/routing/users_routing_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "C:/Users/cmyth/Documents/School/College/Masters/Spring 2021/CSCE 606/Project/DevHub/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
           null,
           null,
           1,
           1,
           null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
           null,
           null
         ]
       }
     },
-    "timestamp": 1619449363
+    "timestamp": 1619460699
   }
 }
