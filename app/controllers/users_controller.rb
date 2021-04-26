@@ -105,12 +105,12 @@ class UsersController < ActionController::Base
         end
         #valid username - username must be a valid combination of alphanumeric characters and underscores. All other characters are to be treated as invalid
         if not valid_username? params["username"]
-            flash[:notice] = "Username not valid. Try different combinations of length and remove special characters."
+            flash[:notice] = "Username not valid. It should have at least 7 characters. Try different combinations of length and remove special characters."
             return false
         end
         #password - valid combination of alphanumeric characters, underscores, and non-quote special characters
         if not valid_password? params["password"]
-            flash[:notice] = "Password not valid."
+            flash[:notice] = "Password not valid. It should have at least 10 characters"
             return false
         end
         #verification of password - must be equal to password above
