@@ -93,7 +93,7 @@ class PostsController < ActionController::Base
         #updates a post after an edit
         @post = Post.find(params[:id])
         @post = @post.update(post_params)
-        flash[:notice] = "#{@post=>post_title} was successfully created"
+        flash[:notice] = "#{@post=>post_title} was successfully updated"
         redirect_to controller: 'posts', action: 'index'
     end
     
