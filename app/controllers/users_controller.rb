@@ -149,14 +149,18 @@ class UsersController < ActionController::Base
 
     def admin_portal
         #if a user is not logged in or is not moderator, send them back to home page and tell them "Silly user: admin priviledges are for moderators"
-        @user = User.find(session[:user_id])
-        if @user.nil?
-            flash[:notice] = "You need to log in first."
-            redirect_to root_url
-          elsif !@user.is_admin?
-            flash[:notice] = "User '#{@user.username}' is not admin."
-            redirect_to root_url
-          end
+        if session[:user_id].nil?
+            redirect_to(root_url, :notice => 'Not logged in. Cannot show your account.')
+        else
+            @user = User.find(session[:user_id])
+            if @user.nil?
+                flash[:notice] = "You need to log in first."
+                redirect_to root_url
+            elsif !@user.is_admin?
+                flash[:notice] = "User '#{@user.username}' is not admin."
+                redirect_to root_url
+            end
+        end
     end
 
     def admin
