@@ -6,6 +6,7 @@ class UsersController < ActionController::Base
 
     def index
         @users = User.all
+       
         #gets list of all users
         #should only be available when logged in as an admin
     end
@@ -52,9 +53,20 @@ class UsersController < ActionController::Base
     def update
         #update user, if they exist
         @user = User.find(session[:user_id])
+        @posts = Post.all
+        original_name=@user.username
         if @user.update(user_params)
             # Handle a successful update.
         redirect_to(show_user_path(@user.id), :notice => 'Your profile was successfully updated.') 
+        @posts_by_user = Post.search_by_user(@user.username)
+        for p in @posts do
+            puts p.username
+            if @posts_by_user.include? p
+                p.username=@user.username
+                p.update_attribute(:username,@user.username)
+            end
+        end
+
      else
            flash[:notices] = ["Your profile could not be updated"]
            redirect_to action: "edit"
@@ -312,4 +324,6 @@ class UsersController < ActionController::Base
             #Verify user parameters, because internet people be spooky
             params.require(:user).permit(:profile_picture_link, :username, :email, :password, :vPassword, :discord_username, :instagram_handle, :github_link, :is_admin)
         end
+        
+     
 end
