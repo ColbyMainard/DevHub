@@ -156,9 +156,6 @@ class UsersController < ActionController::Base
           elsif !@user.is_admin?
             flash[:notice] = "User '#{@user.username}' is not admin."
             redirect_to root_url
-          else
-            flash[:notice] = "User '#{@user.username}' is an admin."
-            redirect_to admin_user_url
           end
     end
 
