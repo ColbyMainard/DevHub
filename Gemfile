@@ -85,6 +85,7 @@ group :test do
   gem 'cuprite'
   gem 'cucumber-rails', require: false
   gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
