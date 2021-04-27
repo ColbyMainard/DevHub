@@ -16,15 +16,15 @@
 .rating
     /Thumbs up
     .like.grow
-        = link_to "  #{@total_upvote}  ", vote_path(:id => @post.id, :vote_type => 1), :method => "get", :class => "span fa fa-thumbs-up fa-2x like", "aria-hidden" => "true"
+        = link_to "  #{@total_upvote}  ", vote_path(:id => @post.id, :vote_type => 1), :method => "get", :class => "span fa fa-thumbs-up fa-2x like", "aria-hidden" => "true", :id => 'upvote_post_thumbs_up'
     /Thumbs down
     .dislike.grow
-        = link_to "  #{@total_downvote}  ", vote_path(:id => @post.id, :vote_type => 0), :method => "get", :class => "span fa fa-thumbs-down fa-2x like", "aria-hidden" => "true", :id => "vote_thumbs_down"
+        = link_to "  #{@total_downvote}  ", vote_path(:id => @post.id, :vote_type => 0), :method => "get", :class => "span fa fa-thumbs-down fa-2x like", "aria-hidden" => "true", :id => "downvote_post_thumbs_down"
 
 %br
 %br
 = link_to 'Edit posts', edit_post_path(:id => @post.id), :method => "get", :class => "btn btn-warning"
-= link_to_if @post.username == session['username'], 'Delete posts', delete_post_path(:id => @post.id), :method => "delete", :class => "btn btn-danger"
+= link_to_if @post.username == session['username'], 'Delete posts', delete_post_path(:id => @post.id), :method => "delete", :class => "btn btn-danger", :id => "delete_post_button"
 
 %div
     -if notice != nil
