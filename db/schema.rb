@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_22_024956) do
+ActiveRecord::Schema.define(version: 2021_04_27_000230) do
 
   create_table "featured_posts", force: :cascade do |t|
     t.integer "post_id"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_04_22_024956) do
     t.boolean "is_admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "activation_digest"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
