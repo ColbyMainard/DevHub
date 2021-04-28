@@ -19,5 +19,9 @@
                 =@user.github_link
             
             -if same_user(@user)
+                %p
+                =button_to "Saved Posts", saved_posts_path(:id=>@user.id),  :method => "get"
+                %p
                 =button_to "Delete" , users_path(:id =>@user.id), :method  => 'delete'
+                %p
                 =button_to "Edit", edit_user_path(:id=>@user.id), :method => "get"

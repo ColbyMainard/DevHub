@@ -1,34 +1,33 @@
 %body
-	%h1 Create New Post
+	%div
+		%h1 Create New Post
 
-%h2 Details of Post
-= form_tag posts_path, :class => 'form' do
-	= label :post, :post_title, 'Title', :class => 'col-form-label'
-	= text_field :post, :post_title, :class => 'form-control'
-	- 2.times do
-		%br
-	= label :post, :post_description, 'Description', :class => 'col-form-label'
-	= text_field :post, :post_description, :class => 'form-control'
-	- 2.times do
-		%br
-	= label :post, :project_motivation, 'Motivation', :class => 'col-form-label'
-	= text_field :post, :project_motivation, :class => 'form-control'
-	- 2.times do
-		%br
-	= label :post, :github_repo_link, 'GitHub Link', :class => 'col-form-label'
-	= text_field :post, :github_repo_link, :class => 'form-control'
-	- 2.times do
-		%br
-	= label :post, :video_url, 'URL of Video', :class => 'col-form-label'
-	= text_field :post, :video_url, :class => 'form-control'
-	- 2.times do
-		%br
-
-	= submit_tag 'Save Changes', :class => 'btn btn-primary'
-	= link_to 'Cancel', controller: 'posts', action: 'index', :class => 'btn btn-secondary'
-
-	- if session['username'].nil?
-		%p **Kindly login to create a new post
+	%h2 Details of Post
+	= form_tag posts_path, :class => 'form' do
+		%div{class: "box"}
+			%p
+			%strong= label :post, :post_title, 'Title', :class => 'col-form-label'
+			= text_field :post, :post_title, :class => 'form-control'
+			%p	
+			%strong= label :post, :post_description, 'Description', :class => 'col-form-label'
+			%p
+			= text_area :post, :post_description, size: "60x12" , :class => 'form-control'
+			%p
+			%strong= label :post, :project_motivation, 'Motivation', :class => 'col-form-label'
+			= text_field :post, :project_motivation, :class => 'form-control'
+			%p
+			%strong= label :post, :github_repo_link, 'GitHub Link', :class => 'col-form-label'
+			= text_field :post, :github_repo_link, :class => 'form-control'
+			%p
+			%strong= label :post, :video_url, 'URL of Video', :class => 'col-form-label'
+			= text_field :post, :video_url, :class => 'form-control'
+			%p
+		
+			= submit_tag 'Save Changes', :class => 'btn btn-primary'
+			= link_to 'Cancel', controller: 'posts', action: 'index', :class => 'btn btn-secondary'
+		
+			- if session['username'].nil?
+				%p **Kindly login to create a new post
 
 %div
 	-if notice != nil
