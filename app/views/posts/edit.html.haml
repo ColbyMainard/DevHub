@@ -20,8 +20,8 @@
       = text_field :post, :video_url, :class => 'form-control'
       %p
   		
-      = button_tag 'Update Post', type: 'submit', disabled: false
-      = link_to 'Cancel', controller: 'posts', action: 'index', :class => 'btn btn-secondary'
+      = button_tag 'Update Post', type: 'submit', disabled: false, :class => 'btn btn-primary'
+      = button_tag 'Cancel', controller: 'posts', action: 'index', :class => 'btn btn-secondary'
 %div
   -if notice != nil
     %p{class: "popup"}= notice
