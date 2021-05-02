@@ -14,7 +14,8 @@
         = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %body
         %nav.navbar.navbar-expand-lg.navbar-light.bg-light
-            %a.navbar-brand{:href => "/"} DevHub
+            %a.navbar-brand{:href => "/"}
+                = image_tag("logos/Devhub_logo.png", :class => 'a devhub-logo')
             %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
                 %span.navbar-toggler-icon
             #navbarNav.collapse.navbar-collapse
@@ -27,12 +28,14 @@
                         = link_to 'Logout', logout_path, :class => 'a nav-link'
                     %a.nav-item
                         = link_to 'Add new post', new_post_path, :class => 'a nav-link'
-                    %a.nav-item Welcome to DevHub, #{session['username']}!!!
+                    %a.nav-item
+                        %a.nav-link Welcome to DevHub, #{session['username']}!!!
                 - else
                     %a.nav-item
                         = link_to 'Login', log_in_path, :class => 'a nav-link'
                     %a.nav-item
                         = link_to 'Sign up', signup_path, :class => 'a nav-link'
-                    %a.nav-item Welcome to DevHub!! Kindly Signup/login to continue
+                    %a.nav-item
+                        %a.nav-link Welcome to DevHub!! Kindly Signup/login to continue
         = yield
 //     %p Welcome to DevHub

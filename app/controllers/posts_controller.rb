@@ -92,8 +92,9 @@ class PostsController < ActionController::Base
     def update
         #updates a post after an edit
         @post = Post.find(params[:id])
+        @post_title = @post.post_title
         @post = @post.update(post_params)
-        flash[:notice] = "#{@post=>post_title} was successfully updated"
+        flash[:notice] = "'#{@post_title}' was successfully updated"
         redirect_to controller: 'posts', action: 'index'
     end
     

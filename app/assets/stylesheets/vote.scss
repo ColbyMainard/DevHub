@@ -27,3 +27,38 @@
 .active {
   color: #2EBDD1;
 }
+
+.devhub-logo {
+  width: 70px;
+}
+
+.navbar {
+  background:linear-gradient(to right, #49a0f1, #ea3397);
+}
+
+.nav-link {
+  color: white;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.btn, input[type=submit] {
+  color: white;
+  background:#49a0f1;
+}
+
+h2 {
+  background:linear-gradient(to right, #49a0f1, #ea3397);
+  text-align: center;
+  font-size: 40px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  background: black;
+  color: white;
+}
